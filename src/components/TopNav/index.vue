@@ -354,6 +354,7 @@ export default {
 
       &:hover {
       color: #2c68ff !important;
+      font-weight: normal;
     }
     }
   }

@@ -385,6 +385,7 @@ export default {
       transition: all 0.2s linear;
       background-size: contain;
       position: absolute;
+      z-index: 1;
     }
     .ban-d:hover {
       filter: blur(20px);
@@ -493,6 +494,7 @@ export default {
         height: 430px;
         box-shadow: 0 18px 35px 0 rgba(0, 34, 178, 0.4);
         overflow: hidden;
+        z-index: 2;
       }
     }
   }
@@ -534,6 +536,7 @@ export default {
 
         .left-d-img {
           position: relative;
+          padding: 70px 0;
         }
 
         .left-d-tit {

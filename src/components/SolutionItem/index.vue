@@ -76,23 +76,22 @@ export default {
         left: 0;
         width: 100%;
         height: 100%;
-
         line {
           stroke-width: 2;
-          // stroke: #4067ff;
+          // stroke: #4067ff; //鼠标hover后显示边框
           fill: none;
-          transition: all 0.8s ease-in-out;
-
-          // .top,
-          // .bottom {
-          //   stroke-dasharray: 280;
-          // }
-
-          // .left,
-          // .right {
-          //   stroke-dasharray: 200;
-          // }
+          transition: all 0.5s ease-in-out;
         }
+      }
+
+      .top,
+      .bottom {
+        stroke-dasharray: 280;
+      }
+
+      .left,
+      .right {
+        stroke-dasharray: 200;
       }
 
       &:hover {
@@ -105,27 +104,20 @@ export default {
             color: #4067ff;
           }
         }
-
         .item-svg {
-          line {
-            // stroke-width: 4;
-            stroke: #ffc340;
+          stroke: #4067ff;
 
-            .top {
-              transform: translateX(-560px);
-            }
-
-            .bottom {
-              transform: translateX(560px);
-            }
-
-            .left {
-              transform: translateY(400px);
-            }
-
-            .right {
-              transform: translateY(-400px);
-            }
+          line.top {
+            transform: translateX(-560px);
+          }
+          line.bottom {
+            transform: translateX(560px);
+          }
+          line.left {
+            transform: translateY(400px);
+          }
+          line.right {
+            transform: translateY(-400px);
           }
         }
       }

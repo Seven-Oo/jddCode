@@ -2,10 +2,11 @@
   <div class="product-main">
     <div class="tabTitle-box">
       <ul class="flex">
-        <li v-for="(item, index) in proDatas" :key="item.id">
+        <li v-for="(item, index) in proDatas" :key="item.id"
+            :class="{active: index==0}">
           <div>
-            <i :class="`ln2-0${index+1}`"/>
-            <h3>{{item.title}}</h3>
+            <i :class="`ln2-0${index + 1}`" />
+            <h3>{{ item.title }}</h3>
           </div>
         </li>
       </ul>
@@ -14,12 +15,10 @@
       <div class="tabCont-tab-box">
         <ul>
           ff
-          <li v-for="item in proDatas.children" :key="item.id">{{item.subtitle}}</li>
+          <li v-for="item in proDatas.children" :key="item.id">{{ item.subtitle }}</li>
         </ul>
       </div>
-      <div class="tabCont-cont-box">
-        dd
-      </div>
+      <div class="tabCont-cont-box">dd</div>
     </div>
   </div>
 </template>
@@ -27,16 +26,14 @@
 <script>
 export default {
   name: 'Product',
-  components: {
-  },
+  components: {},
   props: {
     proDatas: {
       type: Array,
       required: true,
     },
   },
-  data: () => ({
-  }),
+  data: () => ({}),
   computed: {},
   watch: {},
   created() {},
@@ -53,11 +50,28 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.product-main{
+.product-main {
   position: relative;
 
   .tabTitle-box {
+    ul li.active {
+      &::before,
+      &::after {
+        background: #fff;
+      }
+      div {
+          margin-top: -8px;
+          border-bottom: 1px solid #fff;
 
+          i {
+            color: rgba(255, 255, 255, 1);
+            font-size: 14px !important;
+          }
+          h3 {
+            font-size: 22px;
+          }
+        }
+    }
     ul li {
       position: relative;
       width: 136px;
@@ -75,7 +89,7 @@ export default {
         height: 3px;
         border-radius: 50%;
         border: 1px solid #2c68ff;
-        background: hsla(0,0%,100%,.2);
+        background: hsla(0, 0%, 100%, 0.2);
       }
 
       &::after {
@@ -87,14 +101,16 @@ export default {
         height: 3px;
         border-radius: 50%;
         border: 1px solid #2c68ff;
-        background: hsla(0,0%,100%,.2);
+        background: hsla(0, 0%, 100%, 0.2);
       }
 
       &:hover {
         div {
+          margin-top: -8px;
+
           i {
             color: rgba(255, 255, 255, 1);
-            font-size: 14px!important;
+            font-size: 14px !important;
           }
           h3 {
             font-size: 22px;
@@ -105,20 +121,20 @@ export default {
       div {
         padding-bottom: 15px;
         box-sizing: border-box;
-        border-bottom: 1px solid hsla(0,0%,100%,.2);
-        transition: all .2s ease;
+        border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+        transition: all 0.2s ease;
 
         i {
           color: rgba(255, 255, 255, 0.4);
           font-size: 8px;
-          transition: all .2s ease;
+          transition: all 0.2s ease;
         }
 
         h3 {
           padding-top: 10px;
           font-weight: normal;
           font-size: 16px;
-          transition: all .2s ease;
+          transition: all 0.2s ease;
         }
       }
     }
