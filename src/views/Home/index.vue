@@ -100,82 +100,82 @@ export default {
       },
       productDatas: [
         {
-          id: '',
+          id: 'aisen',
           title: 'AI科技',
           children: [
             {
-              id: '',
+              id: 'aisen1',
               subtitle: '智能机器人',
               children: [
                 {
-                  id: '',
+                  id: 'aisen1-1',
                   contTitle: '可穿戴AI仿生手',
                   contBody: '可用于特种作业，代替人员进入危险环境中完成操作任务',
                 },
                 {
-                  id: '',
+                  id: 'aisen1-2',
                   contTitle: '挂轨式巡检AI机器人',
                   contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
                 },
                 {
-                  id: '',
+                  id: 'aisen1-3',
                   contTitle: '商服AI机器人',
                   contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
                 },
                 {
-                  id: '',
+                  id: 'aisen1-4',
                   contTitle: '挂轨式巡检AI机器人',
                   contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
                 },
                 {
-                  id: '',
+                  id: 'aisen1-5',
                   contTitle: '商服AI机器人',
                   contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
                 },
               ],
             },
             {
-              id: '',
+              id: 'aisen2',
               subtitle: '区块链',
               children: [
                 {
-                  id: '',
+                  id: 'aisen2-1',
                   contTitle: '挂轨式巡检AI机器人',
                   contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
                 },
                 {
-                  id: '',
+                  id: 'aisen2-2',
                   contTitle: '挂轨式巡检AI机器人',
                   contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
                 },
                 {
-                  id: '',
+                  id: 'aisen2-3',
                   contTitle: '商服AI机器人',
                   contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
                 },
               ],
             },
             {
-              id: '',
+              id: 'aisen3',
               subtitle: '智能风控',
               children: [
                 {
-                  id: '',
+                  id: 'aisen3-1',
                   contTitle: '商服AI机器人',
                   contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
                 },
                 {
-                  id: '',
+                  id: 'aisen3-2',
                   contTitle: '商服AI机器人',
                   contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
                 },
                 {
-                  id: '',
+                  id: 'aisen3-3',
                   contTitle: '挂轨式巡检AI机器人',
                   contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
                 },
                 {
-                  id: '',
+                  id: 'aisen3-4',
                   contTitle: '商服AI机器人',
                   contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
                 },
@@ -184,51 +184,51 @@ export default {
           ],
         },
         {
-          id: '',
+          id: 'jinrong',
           title: '金融科技',
           children: [
             {
-              id: '',
+              id: 'jinrong1',
               subtitle: '金融云',
               children: [
                 {
-                  id: '',
+                  id: 'jinrong1-1',
                   contTitle: '挂轨式巡检AI机器人',
                   contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
                 },
                 {
-                  id: '',
+                  id: 'jinrong1-2',
                   contTitle: '挂轨式巡检AI机器人',
                   contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
                 },
                 {
-                  id: '',
+                  id: 'jinrong1-3',
                   contTitle: '商服AI机器人',
                   contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
                 },
               ],
             },
             {
-              id: '',
-              subtitle: '智能风控',
+              id: 'jinrong2',
+              subtitle: '风控',
               children: [
                 {
-                  id: '',
+                  id: 'jinrong2-1',
                   contTitle: '商服AI机器人',
                   contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
                 },
                 {
-                  id: '',
+                  id: 'jinrong2-2',
                   contTitle: '商服AI机器人',
                   contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
                 },
                 {
-                  id: '',
+                  id: 'jinrong2-3',
                   contTitle: '挂轨式巡检AI机器人',
                   contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
                 },
                 {
-                  id: '',
+                  id: 'jinrong2-4',
                   contTitle: '商服AI机器人',
                   contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
                 },
@@ -237,67 +237,67 @@ export default {
           ],
         },
         {
-          id: '',
+          id: 'zhineng',
           title: '智能城市',
           children: [
             {
-              id: '',
+              id: 'zhineng-1',
               contTitle: '挂轨式巡检AI机器人',
               contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
             },
             {
-              id: '',
+              id: 'zhineng-2',
               contTitle: '挂轨式巡检AI机器人',
               contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
             },
             {
-              id: '',
+              id: 'zhineng-3',
               contTitle: '挂轨式巡检AI机器人',
               contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
             },
             {
-              id: '',
+              id: 'zhineng-4',
               contTitle: '商服AI机器人',
               contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
             },
             {
-              id: '',
+              id: 'zhineng-5',
               contTitle: '挂轨式巡检AI机器人',
               contBody: '依托AI视觉识别等技术系统组成 实现全时段智慧安防巡检',
             },
             {
-              id: '',
+              id: 'zhineng-6',
               contTitle: '商服AI机器人',
               contBody: '集合图像识别、语音智能对话、屏幕交互、智能导航等功能',
             },
           ],
         },
         {
-          id: '',
+          id: 'shuzi',
           title: '数字营销',
           children: [
             {
-              id: '',
+              id: 'shuzi1',
               subtitle: '屏端应用生态',
               children: [
                 {
-                  id: '',
+                  id: 'shuzi1-1',
                   contTitle: '钼媒方舟平台',
                   contBody: '基于AI、数据、硬件、安全等基础技术，以IoT平台、方舟小程序开放平台、屏端应用平台为连接，实现内容应用与线下场景屏幕连接。',
                 },
               ],
             },
             {
-              id: '',
+              id: 'shuzi2',
               subtitle: 'SAAS产品',
               children: [
                 {
-                  id: '',
+                  id: 'shuzi2-1',
                   contTitle: '钼媒方舟平台',
                   contBody: '基于AI、数据、硬件、安全等基础技术，以IoT平台、方舟小程序开放平台、屏端应用平台为连接，实现内容应用与线下场景屏幕连接。',
                 },
                 {
-                  id: '',
+                  id: 'shuzi2-2',
                   contTitle: '钼媒方舟平台',
                   contBody: '基于AI、数据、硬件、安全等基础技术，以IoT平台、方舟小程序开放平台、屏端应用平台为连接，实现内容应用与线下场景屏幕连接。',
                 },

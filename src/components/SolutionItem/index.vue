@@ -4,16 +4,16 @@
       <li v-for="item in solutionData" :key="item.id">
         <div class="items-box">
           <a href="#">
-            <img :src="item.src" alt="" >
+            <img :src="item.src" alt="">
             <h3>{{ item.title }}</h3>
             <p>{{ item.intro }}</p>
           </a>
         </div>
         <svg class="item-svg">
-          <line class="top" x1="0" y1="0" x2="840" y2="0" />
-          <line class="left" x1="0" y1="200" x2="0" y2="-400" />
-          <line class="bottom" x1="280" y1="200" x2="-560" y2="200" />
-          <line class="right" x1="280" y1="0" x2="280" y2="600" />
+          <line class="top" x1="280" y1="0" x2="-840" y2="0" />
+          <line class="left" x1="0" y1="0" x2="0" y2="600" />
+          <line class="bottom" x1="840" y1="200" x2="0" y2="200" />
+          <line class="right" x1="280" y1="200" x2="280" y2="-400" />
         </svg>
       </li>
     </ul>
@@ -82,16 +82,15 @@ export default {
           fill: none;
           transition: all 0.5s ease-in-out;
         }
-      }
+        line.top,
+        line.bottom {
+          stroke-dasharray: 280;
+        }
 
-      .top,
-      .bottom {
-        stroke-dasharray: 280;
-      }
-
-      .left,
-      .right {
-        stroke-dasharray: 200;
+        line.left,
+        line.right {
+          stroke-dasharray: 200;
+        }
       }
 
       &:hover {
@@ -108,16 +107,16 @@ export default {
           stroke: #4067ff;
 
           line.top {
-            transform: translateX(-560px);
-          }
-          line.bottom {
             transform: translateX(560px);
           }
+          line.bottom {
+            transform: translateX(-560px);
+          }
           line.left {
-            transform: translateY(400px);
+            transform: translateY(-400px);
           }
           line.right {
-            transform: translateY(-400px);
+            transform: translateY(400px);
           }
         }
       }

@@ -54,6 +54,14 @@ export default {
 
 <style lang="less" scoped>
 .submenu-main {
+  div {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   .title {
     color: #2c68ff;
     font-size: 16px;
