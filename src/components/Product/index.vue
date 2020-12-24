@@ -3,7 +3,12 @@
     <div class="tabTitle-box">
       <ul class="flex">
         <template v-for="(item, index) in proDatas">
-          <li :class="{ active: index == 0 }" :key="`tab${item.id}`">
+          <li
+            :class="{ active: index == nowIndex }"
+            :key="item.id"
+            :data-lid="item.id"
+            @click="changeTab(index)"
+          >
             <div>
               <i :class="`ln2-0${index + 1}`" />
               <h3>{{ item.title }}</h3>
@@ -20,36 +25,49 @@
       </div>
     </div>
     <div class="tabCont-box">
-      <div class="tabCont-tab-box flex">
-        <ul class="tabCont-title-box flex">
-          <template v-for="item in proDatas">
-            <template v-for="(items, index) in item.children">
+      <template v-if="proDatas[nowIndex].children[subNowIndex].subtitle">
+        <div class="tabCont-tab-box flex">
+          <ul class="tabCont-title-box flex">
+            <template v-for="(items, index) in proDatas[nowIndex].children">
               <li
                 :title="items.subtitle"
                 v-if="items.subtitle"
                 :key="items.id"
-                :class="{ active: index == 0 }"
+                :data-lid="items.id"
+                :class="{ active: index == subNowIndex }"
+                @click="changeSubTab(index)"
               >
                 {{ items.subtitle }}
               </li>
             </template>
+          </ul>
+        </div>
+      </template>
+
+      <template v-if="proDatas[nowIndex].children[subNowIndex].subtitle">
+        <div class="tabCont-cont-box">
+          <template v-for="item in proDatas[nowIndex].children[subNowIndex].children">
+            <div :key="item.id" class="tabCont-cont-item">
+              <a href="#">
+                <h5>{{ item.contTitle }}</h5>
+                <p>{{ item.contBody }}</p>
+              </a>
+            </div>
           </template>
-        </ul>
-      </div>
-      <div class="tabCont-cont-box">
-        <template v-for="item in proDatas">
-          <template v-for="itemA in item.children">
-            <template v-for="item in itemA.children">
-              <div :key="item.id" class="tabCont-cont-item">
-                <a href="#">
-                  <h5>{{ item.contTitle }}</h5>
-                  <p>{{ item.contBody }}</p>
-                </a>
-              </div>
-            </template>
+        </div>
+      </template>
+      <template v-else>
+        <div class="tabCont-cont-box" style="margin-top: 20px;">
+          <template v-for="item in proDatas[nowIndex].children">
+            <div :key="item.id" class="tabCont-cont-item">
+              <a href="#">
+                <h5>{{ item.contTitle }}</h5>
+                <p>{{ item.contBody }}</p>
+              </a>
+            </div>
           </template>
-        </template>
-      </div>
+        </div>
+      </template>
     </div>
   </div>
 </template>
@@ -66,6 +84,8 @@ export default {
   },
   data: () => ({
     btnTxt: '查看更多',
+    nowIndex: 0,
+    subNowIndex: 0,
   }),
   computed: {},
   watch: {},
@@ -78,7 +98,14 @@ export default {
   beforeDestroy() {}, // 生命周期 - 销毁之前
   destroyed() {}, // 生命周期 - 销毁完成
   activated() {},
-  methods: {},
+  methods: {
+    changeTab(index) {
+      this.nowIndex = index;
+    },
+    changeSubTab(index) {
+      this.subNowIndex = index;
+    },
+  },
 };
 </script>
 
