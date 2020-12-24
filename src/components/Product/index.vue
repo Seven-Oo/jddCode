@@ -3,7 +3,11 @@
     <div class="tabTitle-box">
       <ul class="flex">
         <template v-for="(item, index) in proDatas">
-          <li :class="{ active: index == 0 }" :key="`tab${item.id}`">
+          <li
+            :class="{ active: index == nowIndex }"
+            :key="`tab${item.id}`"
+            @click="changeTab(index)"
+          >
             <div>
               <i :class="`ln2-0${index + 1}`" />
               <h3>{{ item.title }}</h3>
@@ -28,7 +32,7 @@
                 :title="items.subtitle"
                 v-if="items.subtitle"
                 :key="items.id"
-                :class="{ active: index == 0 }"
+                :class="{ active: index == nowIndex }"
               >
                 {{ items.subtitle }}
               </li>
@@ -66,6 +70,7 @@ export default {
   },
   data: () => ({
     btnTxt: '查看更多',
+    nowIndex: 0,
   }),
   computed: {},
   watch: {},
@@ -78,7 +83,11 @@ export default {
   beforeDestroy() {}, // 生命周期 - 销毁之前
   destroyed() {}, // 生命周期 - 销毁完成
   activated() {},
-  methods: {},
+  methods: {
+    changeTab(index) {
+      this.nowIndex = index;
+    },
+  },
 };
 </script>
 
@@ -249,11 +258,6 @@ export default {
             font-size: 16px;
             visibility: hidden;
           }
-
-          // &:hover {
-          //   color: #fff;
-          //   font-size: 16px;
-          // }
         }
         li:not(.active):hover {
           color: #fff;

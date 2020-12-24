@@ -1,6 +1,5 @@
 <template>
   <div class="home" @mousemove="bannerMove($event)" @mouseenter="bannerEnter($event)">
-    <!-- <TopNav /> -->
     <div class="index">
       <div class="bar-box">
         <img src="@/assets/index_banner_bg_small_d.png" alt="" class="ban-smalld" >
@@ -310,7 +309,7 @@ export default {
   },
   created() {
     this.$http.get('/sliders').then((res) => {
-      console.log(res);
+      // console.log(res);
       this.slideSpeed = res.data.data.slideSpeed;
       this.slides = res.data.data.slides;
     });
