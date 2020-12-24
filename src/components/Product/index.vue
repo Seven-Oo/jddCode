@@ -276,11 +276,6 @@ export default {
             font-size: 16px;
             visibility: hidden;
           }
-
-          // &:hover {
-          //   color: #fff;
-          //   font-size: 16px;
-          // }
         }
         li:not(.active):hover {
           color: #fff;
