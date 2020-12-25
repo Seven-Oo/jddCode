@@ -53,11 +53,11 @@
       </div>
     </div>
     <div class="case-box">
-      <!-- <div class="main-wrap"> -->
       <Case :caseData="caseDatas"/>
-      <!-- </div> -->
     </div>
-    <div class="news-box">news</div>
+    <div class="news-box">
+      <News :newsData="newsDatas"/>
+    </div>
   </div>
 </template>
 
@@ -493,6 +493,66 @@ export default {
           ],
         },
       ],
+
+      newsDatas: [
+        {
+          id: 'newsData',
+          title: '数科动态',
+          rightBtnTxt: '更多新闻',
+          rightHref: 'https://www.baidu.com/',
+          lists: [
+            {
+              id: 'news1',
+              href: 'https://www.jddglobal.com/',
+              src: require('@/assets/trend-1.png'),
+              publish: {
+                puber: '京东数科',
+                time: '2020-12-25',
+              },
+              title: '京东数科陈生强：助智能城市展翼，与实体产业共进',
+              conts: `11月25日,JDDiscovery-2020京东全球科技探索者大会在京举办。在智能城市论坛上,
+              京东数字科技集团CEO陈生强做了题为“助智能城市展翼 与实体产业共进”的主题发言。
+              陈生强认为通过数字科技,可以推动社会、生产、生活向数字化转型,进而培育中国经济新的内生增长动力,
+              提升实体产业的高质量发展,还可以助力国际竞争力持续增强。而时下智能城市则成为了一个能够服务于社会治理、
+              实体产业和百姓民生最全面和最立体的场景,也成为了数字科技应用最具创新的表现形式。
+              智能城市技术的演进也驱动着数字政府和数字经济的不断发展。目前,国内数字政府的建设已经开始进入到第四阶段,
+              即“市域治理现代化服务”,也是当前京东数科在智能城市服务中非常核心的模块。而陈生强在论坛现场提出,
+              光有数字政府服务还不够,智能城市建设之中,数字政府建设与数字经济建设不可分割。政府推动城市数字化、
+              智能化的目标,不仅是追求安全和稳定,以及更优`,
+              linkTxt: '查看详情',
+            },
+            {
+              id: 'news2',
+              href: 'https://www.jddglobal.com/',
+              src: require('@/assets/trend-2.png'),
+              publish: {
+                puber: '京东',
+                time: '2020-11-01',
+              },
+              title: '苏州开展数字人民币红包试点，京东提供场景+技术支持',
+              conts: `12月5日，苏州市人民政府联合中国人民银行开展的数字人民币红包试点工作正式启动预约。
+              该试点结合“双十二苏州购物节”，将面向所有符合条件的苏州市民发放总计2000万元的数字人民币红包，
+              红包数量共计10万个，每个红包200元，并于12月11日20：00时正式生效。`,
+              linkTxt: '查看详情',
+            },
+            {
+              id: 'news3',
+              href: 'https://www.jddglobal.com/',
+              src: require('@/assets/trend-3.png'),
+              publish: {
+                puber: '京东数科News',
+                time: '2019-06-25',
+              },
+              title: '京东数科T1金融云跻身中国金融云平台解决方案市场五强',
+              conts: `智能城市技术的演进也驱动着数字政府和数字经济的不断发展。目前,国内数字政府的建设已经开始进入到第四阶段,
+              即“市域治理现代化服务”,也是当前京东数科在智能城市服务中非常核心的模块。而陈生强在论坛现场提出,
+              光有数字政府服务还不够,智能城市建设之中,数字政府建设与数字经济建设不可分割。政府推动城市数字化、
+              智能化的目标,不仅是追求安全和稳定,以及更优`,
+              linkTxt: '查看详情',
+            },
+          ],
+        },
+      ],
     };
   },
   created() {
@@ -760,4 +820,7 @@ export default {
     }
   }
 }
+// #footer-main {
+//   background: #010103!important;
+// }
 </style>

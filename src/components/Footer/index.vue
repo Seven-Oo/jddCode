@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-main ">
+  <div class="footer-main" id="footer-main">
     <div class="footer-box">
       <div class="foot-cont flex">
         <div class="contract-box flex1">

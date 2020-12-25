@@ -342,7 +342,6 @@ export default {
     button {
       width: 130px;
       height: 46px;
-      line-height: 46px;
       font-size: 16px;
       border: 1px solid #477cff;
       border-radius: 2px;
