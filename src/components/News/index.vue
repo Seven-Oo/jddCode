@@ -90,6 +90,21 @@ export default {
       right: 0;
       top: 50%;
       transform: translateY(-50%);
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: hsla(0,0%,100%,.8);
+        a {
+           color: #00041a;
+            span {
+              transform: translate(0);
+            }
+            i {
+              opacity: 1;
+              transform: translate(6px);
+            }
+        }
+      }
 
       button {
         width: 130px;
@@ -99,18 +114,10 @@ export default {
         border-radius: 2px;
         margin: 0 auto;
         background: transparent;
+        transition: all 0.2s ease;
 
         a {
           color: #fff;
-          &:hover {
-            span {
-              transform: translate(0);
-            }
-            i {
-              opacity: 1;
-              transform: translate(6px);
-            }
-          }
         }
         i {
           display: inline-block;
