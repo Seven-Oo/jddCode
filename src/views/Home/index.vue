@@ -15,7 +15,7 @@
       </div>
       <div class="main-wrap banner-box flex">
         <div class="banner-nav">
-          <img src="@/assets/common_slogan.svg" alt="" >
+          <img src="@/assets/common_slogan.svg" alt="">
           <div class="banner-play">{{ playVideo }}<i class="ln2-right" /></div>
           <ul>
             <li v-for="item in jiejue" :key="item.id">
@@ -30,16 +30,16 @@
       </div>
     </div>
     <div class="solution-box">
-      <div class="main-wrap ">
+      <div class="main-wrap">
         <Solution />
       </div>
     </div>
     <div class="product-box">
-      <div class="main-wrap ">
+      <div class="main-wrap">
         <div class="pro-box flex">
           <div class="left-box">
             <div class="left-d-img">
-              <img src="@/assets/prod_dynamic_d.png" alt="" >
+              <img src="@/assets/prod_dynamic_d.png" alt="">
             </div>
             <div class="left-d-tit">
               <h2>{{ prodLeftData.title }}</h2>
@@ -47,17 +47,17 @@
             </div>
           </div>
           <div class="right-box">
-            <Product :proDatas="productDatas"/>
+            <Product :proDatas="productDatas" />
           </div>
         </div>
       </div>
     </div>
     <div class="case-box">
-      case
+      <!-- <div class="main-wrap"> -->
+      <Case :caseData="caseDatas"/>
+      <!-- </div> -->
     </div>
-    <div class="news-box">
-      news
-    </div>
+    <div class="news-box">news</div>
   </div>
 </template>
 
@@ -93,9 +93,11 @@ export default {
       ],
       slideSpeed: 3000,
       slides: [],
+
       prodLeftData: {
         title: '数字化产品',
-        parap: '京东数字科技以人工智能、大数据、区块链等时代前沿技术为基础，开发多种产品为企业创造更大的价值',
+        parap:
+          '京东数字科技以人工智能、大数据、区块链等时代前沿技术为基础，开发多种产品为企业创造更大的价值',
       },
       productDatas: [
         {
@@ -282,7 +284,8 @@ export default {
                 {
                   id: 'shuzi1-1',
                   contTitle: '钼媒方舟平台',
-                  contBody: '基于AI、数据、硬件、安全等基础技术，以IoT平台、方舟小程序开放平台、屏端应用平台为连接，实现内容应用与线下场景屏幕连接。',
+                  contBody:
+                    '基于AI、数据、硬件、安全等基础技术，以IoT平台、方舟小程序开放平台、屏端应用平台为连接，实现内容应用与线下场景屏幕连接。',
                 },
               ],
             },
@@ -293,12 +296,197 @@ export default {
                 {
                   id: 'shuzi2-1',
                   contTitle: '钼媒方舟平台',
-                  contBody: '基于AI、数据、硬件、安全等基础技术，以IoT平台、方舟小程序开放平台、屏端应用平台为连接，实现内容应用与线下场景屏幕连接。',
+                  contBody:
+                    '基于AI、数据、硬件、安全等基础技术，以IoT平台、方舟小程序开放平台、屏端应用平台为连接，实现内容应用与线下场景屏幕连接。',
                 },
                 {
                   id: 'shuzi2-2',
                   contTitle: '钼媒方舟平台',
-                  contBody: '基于AI、数据、硬件、安全等基础技术，以IoT平台、方舟小程序开放平台、屏端应用平台为连接，实现内容应用与线下场景屏幕连接。',
+                  contBody:
+                    '基于AI、数据、硬件、安全等基础技术，以IoT平台、方舟小程序开放平台、屏端应用平台为连接，实现内容应用与线下场景屏幕连接。',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+
+      caseDatas: [
+        {
+          id: 'caseData',
+          caseTitle: '客户案例',
+          caseTitle_tips: '与合作伙伴一起，共创数字经济增长新方式',
+          btnTxt: '查看更多',
+          caseImgs: [
+            {
+              id: 'caseIcon1',
+              src: require('@/assets/index_case_icon_1.png'),
+              list: [
+                {
+                  id: 'case1-1',
+                  title: '京东数科助力南通市域治理现代化',
+                  conts: `江苏省南通市基于京东数科“智能城市操作系统”建成市域治理现代化指挥中心。
+                  该中心打破数据孤岛，汇聚南通市64个部门、10个县市区数十亿量级的数据。
+                  全南通市交通运行、公共安全、环境污染等情况都在一张大屏幕上实时呈现，一屏统览。`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
+                },
+              ],
+            },
+            {
+              id: 'caseIcon2',
+              src: require('@/assets/index_case_icon_2.png'),
+              list: [
+                {
+                  id: 'case2-1',
+                  title: '京东数科携手兴银基金推出“兴银策略智选混合型证券投资基金”',
+                  conts: `10月22日，兴银基金与京东数字科技集团（简称京东数科）
+                  携手推出“兴银策略智选混合型证券投资基金”（简称兴银策略智选）`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
+                },
+              ],
+            },
+            {
+              id: 'caseIcon3',
+              src: require('@/assets/index_case_icon_3.png'),
+              list: [
+                {
+                  id: 'case3-1',
+                  title: '京东数科携手中国雄安集团打造雄安新区“块数据平台”',
+                  conts: `2019年，京东数科的智能城市操作系统在雄安落地为块数据平台，它是雄安新区城市大数据资源中心的实际载体，
+                  承担着汇聚新区全域数据，统筹新区数据管理，实现新区数据融合应用的重要任务。`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
+                },
+              ],
+            },
+            {
+              id: 'caseIcon4',
+              src: require('@/assets/index_case_icon_2.png'),
+              list: [
+                {
+                  id: 'case4-1',
+                  title: '京东数科携手兴银基金推出“兴银策略智选混合型证券投资基金”',
+                  conts: `10月22日，兴银基金与京东数字科技集团（简称京东数科）
+                  携手推出“兴银策略智选混合型证券投资基金”（简称兴银策略智选）`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
+                },
+              ],
+            },
+            {
+              id: 'caseIcon5',
+              src: require('@/assets/index_case_icon_1.png'),
+              list: [
+                {
+                  id: 'case5-1',
+                  title: '京东数科助力南通市域治理现代化',
+                  conts: `江苏省南通市基于京东数科“智能城市操作系统”建成市域治理现代化指挥中心。
+                  该中心打破数据孤岛，汇聚南通市64个部门、10个县市区数十亿量级的数据。
+                  全南通市交通运行、公共安全、环境污染等情况都在一张大屏幕上实时呈现，一屏统览。`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
+                },
+              ],
+            },
+            {
+              id: 'caseIcon6',
+              src: require('@/assets/index_case_icon_3.png'),
+              list: [
+                {
+                  id: 'case6-1',
+                  title: '京东数科携手中国雄安集团打造雄安新区“块数据平台”',
+                  conts: `2019年，京东数科的智能城市操作系统在雄安落地为块数据平台，它是雄安新区城市大数据资源中心的实际载体，
+                  承担着汇聚新区全域数据，统筹新区数据管理，实现新区数据融合应用的重要任务。`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
+                },
+              ],
+            },
+            {
+              id: 'caseIcon7',
+              src: require('@/assets/index_case_icon_1.png'),
+              list: [
+                {
+                  id: 'case7-1',
+                  title: '京东数科携手兴银基金推出“兴银策略智选混合型证券投资基金”',
+                  conts: `10月22日，兴银基金与京东数字科技集团（简称京东数科）
+                  携手推出“兴银策略智选混合型证券投资基金”（简称兴银策略智选）`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
+                },
+              ],
+            },
+            {
+              id: 'caseIcon8',
+              src: require('@/assets/index_case_icon_2.png'),
+              list: [
+                {
+                  id: 'case8-1',
+                  title: '京东数科助力南通市域治理现代化',
+                  conts: `江苏省南通市基于京东数科“智能城市操作系统”建成市域治理现代化指挥中心。
+                  该中心打破数据孤岛，汇聚南通市64个部门、10个县市区数十亿量级的数据。
+                  全南通市交通运行、公共安全、环境污染等情况都在一张大屏幕上实时呈现，一屏统览。`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
+                },
+              ],
+            },
+            {
+              id: 'caseIcon9',
+              src: require('@/assets/index_case_icon_3.png'),
+              list: [
+                {
+                  id: 'case9-1',
+                  title: '京东数科携手兴银基金推出“兴银策略智选混合型证券投资基金”',
+                  conts: `10月22日，兴银基金与京东数字科技集团（简称京东数科）
+                  携手推出“兴银策略智选混合型证券投资基金”（简称兴银策略智选）`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
+                },
+              ],
+            },
+            {
+              id: 'caseIcon10',
+              src: require('@/assets/index_case_icon_1.png'),
+              list: [
+                {
+                  id: 'case10-1',
+                  title: '京东数科携手中国雄安集团打造雄安新区“块数据平台”',
+                  conts: `2019年，京东数科的智能城市操作系统在雄安落地为块数据平台，它是雄安新区城市大数据资源中心的实际载体，
+                  承担着汇聚新区全域数据，统筹新区数据管理，实现新区数据融合应用的重要任务。`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
+                },
+              ],
+            },
+            {
+              id: 'caseIcon11',
+              src: require('@/assets/index_case_icon_2.png'),
+              list: [
+                {
+                  id: 'case11-1',
+                  title: '京东数科助力南通市域治理现代化',
+                  conts: `江苏省南通市基于京东数科“智能城市操作系统”建成市域治理现代化指挥中心。
+                  该中心打破数据孤岛，汇聚南通市64个部门、10个县市区数十亿量级的数据。
+                  全南通市交通运行、公共安全、环境污染等情况都在一张大屏幕上实时呈现，一屏统览。`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
+                },
+              ],
+            },
+            {
+              id: 'caseIcon12',
+              src: require('@/assets/index_case_icon_1.png'),
+              list: [
+                {
+                  id: 'case12-1',
+                  title: '京东数科携手兴银基金推出“兴银策略智选混合型证券投资基金”',
+                  conts: `10月22日，兴银基金与京东数字科技集团（简称京东数科）
+                  携手推出“兴银策略智选混合型证券投资基金”（简称兴银策略智选）`,
+                  btnTxt: '了解详情',
+                  href: 'https://www.jddglobal.com/',
                 },
               ],
             },
@@ -309,7 +497,6 @@ export default {
   },
   created() {
     this.$http.get('/sliders').then((res) => {
-      // console.log(res);
       this.slideSpeed = res.data.data.slideSpeed;
       this.slides = res.data.data.slides;
     });
@@ -324,7 +511,7 @@ export default {
       this.coordinateY = offsetY;
     },
     // eslint-disable-next-line
-    bannerMove: throttle(function(event) {
+    bannerMove: throttle(function (event) {
       const { offsetX, offsetY } = event;
       this.disY = (this.coordinateY - offsetY) * 0.05;
       this.disX = (this.coordinateX - offsetX) * 0.05;
@@ -339,8 +526,7 @@ export default {
     }, 250),
     handleScroll() {
       const scrollTop = window.pageYOffset
-      || document.documentElement.scrollTop
-      || document.body.scrollTop;
+      || document.documentElement.scrollTop || document.body.scrollTop;
 
       if (scrollTop >= 70) {
         document.querySelector('.topnav-main').style.backgroundColor = '#fff';
@@ -359,12 +545,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.main-wrap {
-  width: 1200px;
-  height: 100%;
-  position: relative;
-  margin: 0 auto;
-}
 .home {
   position: relative;
   width: 100%;

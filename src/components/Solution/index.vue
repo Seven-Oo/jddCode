@@ -18,13 +18,15 @@
           </li>
         </ul>
       </div>
-      <div class="tab-cont">
-        <SolutionItem
-          v-for="(item, index) in solutionData"
-          :key="index"
-          :solutionData="item.lists"
-        />
-      </div>
+      <transition name="slide-fade">
+        <div class="tab-cont" v-if="itemVisibility">
+          <SolutionItem
+            v-for="(item, index) in solutionData"
+            :key="index"
+            :solutionData="item.lists"
+          />
+        </div>
+      </transition>
     </div>
     <div class="btn">
       <button>
@@ -43,6 +45,7 @@ export default {
   components: {},
   props: {},
   data: () => ({
+    itemVisibility: true,
     title: '数字化解决方案',
     titleIntro:
       '运用数字科技服务金融和实体产业，助力各行业降低成本、提升效率、模式升级，和客户一起携手跨越、重塑增长',
@@ -67,49 +70,49 @@ export default {
         lists: [
           {
             id: 'Scenario',
-            src: require('../../assets/solution_financial-gov.png'),
+            src: require('@/assets/solution_financial-gov.png'),
             title: '场景生态解决方案',
             intro: '海量场景驱动业务创新，实现商业银行差异化竞争优势',
           },
           {
             id: 'retail',
-            src: require('../../assets/solution_cashier.png'),
+            src: require('@/assets/solution_cashier.png'),
             title: '智能风控解决方案',
             intro: '为商业银行金融场景输出智能风控分析服务',
           },
           {
             id: 'corpratefin',
-            src: require('../../assets/solution_customer-service.png'),
+            src: require('@/assets/solution_customer-service.png'),
             title: '智能运营解决方案',
             intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
           },
           {
             id: 'finmarketb',
-            src: require('../../assets/solution_data-middle.png'),
+            src: require('@/assets/solution_data-middle.png'),
             title: '数据中台解决方案',
             intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
           },
           {
             id: 'risk',
-            src: require('../../assets/solution_risk-management.png'),
+            src: require('@/assets/solution_risk-management.png'),
             title: '提供多场景多工具',
             intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
           },
           {
             id: 'aitarcb',
-            src: require('../../assets/solution_social-governance.png'),
+            src: require('@/assets/solution_social-governance.png'),
             title: '一体化智能营销',
             intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
           },
           {
             id: 'Intelligentop',
-            src: require('../../assets/solution_tourism.png'),
+            src: require('@/assets/solution_tourism.png'),
             title: '帮助银行打造统一',
             intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
           },
           {
             id: 'dataCenter',
-            src: require('../../assets/solution_trading.png'),
+            src: require('@/assets/solution_trading.png'),
             title: '数据共享服务中心',
             intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
           },
@@ -121,31 +124,31 @@ export default {
         lists: [
           {
             id: 'corpratefin2',
-            src: require('../../assets/solution_customer-service.png'),
+            src: require('@/assets/solution_customer-service.png'),
             title: '智能运营解决方案',
             intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
           },
           {
             id: 'finmarketb2',
-            src: require('../../assets/solution_data-middle.png'),
+            src: require('@/assets/solution_data-middle.png'),
             title: '数据中台解决方案',
             intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
           },
           {
             id: 'risk2',
-            src: require('../../assets/solution_risk-management.png'),
+            src: require('@/assets/solution_risk-management.png'),
             title: '提供多场景多工具',
             intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
           },
           {
             id: 'aitarcb2',
-            src: require('../../assets/solution_social-governance.png'),
+            src: require('@/assets/solution_social-governance.png'),
             title: '一体化智能营销',
             intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
           },
           {
             id: 'Intelligentop2',
-            src: require('../../assets/solution_tourism.png'),
+            src: require('@/assets/solution_tourism.png'),
             title: '帮助银行打造统一',
             intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
           },
@@ -157,31 +160,31 @@ export default {
         lists: [
           {
             id: 'Scenario3',
-            src: require('../../assets/solution_financial-gov.png'),
+            src: require('@/assets/solution_financial-gov.png'),
             title: '场景生态解决方案',
             intro: '海量场景驱动业务创新，实现商业银行差异化竞争优势',
           },
           {
             id: 'retail3',
-            src: require('../../assets/solution_cashier.png'),
+            src: require('@/assets/solution_cashier.png'),
             title: '智能风控解决方案',
             intro: '为商业银行金融场景输出智能风控分析服务',
           },
           {
             id: 'corpratefin3',
-            src: require('../../assets/solution_customer-service.png'),
+            src: require('@/assets/solution_customer-service.png'),
             title: '智能运营解决方案',
             intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
           },
           {
             id: 'finmarketb3',
-            src: require('../../assets/solution_data-middle.png'),
+            src: require('@/assets/solution_data-middle.png'),
             title: '数据中台解决方案',
             intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
           },
           {
             id: 'risk3',
-            src: require('../../assets/solution_risk-management.png'),
+            src: require('@/assets/solution_risk-management.png'),
             title: '提供多场景多工具',
             intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
           },
@@ -211,14 +214,28 @@ export default {
   activated() {},
   methods: {
     changeSolution(index) {
+      this.itemVisibility = false;
       this.nowIndex = index;
       this.solutionData = this[`solutionData${index + 1}`];
+      setTimeout(() => {
+        this.itemVisibility = true;
+      });
     },
   },
 };
 </script>
 
 <style lang="less" scoped>
+.slide-fade-enter-active {
+  transition: all .3s ease-in-out;
+}
+.slide-fade-leave-active {
+  transition: all .3s ease-in-out;
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(50%);
+  opacity: 0;
+}
 .solution-main {
   padding-top: 36px;
   margin-bottom: 40px;
