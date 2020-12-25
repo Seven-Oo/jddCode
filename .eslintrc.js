@@ -8,6 +8,7 @@ module.exports = {
     parser: 'babel-eslint',
   },
   rules: {
+    'no-unused-vars': 'off',
     'linebreak-style': ['off', 'windows'],
     'global-require': 0,
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',

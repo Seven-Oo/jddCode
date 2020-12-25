@@ -4,6 +4,7 @@ import hotkeys from 'hotkeys-js';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import axios from 'axios';
+import Mock from './mock/index';
 
 import App from './App.vue';
 import { router } from './router';
@@ -19,7 +20,8 @@ Vue.config.productionTip = false;
 Vue.prototype.$dayjs = dayjs;
 Vue.prototype.$hotkeys = hotkeys;
 
-axios.defaults.baseURL = 'http://58.87.95.232:3000/mock/11/';
+// axios.defaults.baseURL = 'http://58.87.95.232:3000/mock/11/';
+axios.defaults.baseURL = 'http://mockjs.com/api';
 Vue.config.productionTip = false;
 Vue.prototype.$http = axios;
 

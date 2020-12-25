@@ -64,9 +64,10 @@ export default {
   watch: {},
   created() {
     this.$http.get('/menuData').then((res) => {
-      this.productionSubMenu = res.data.data.productionSubMenu;
+      console.log(res);
+      this.productionSubMenu = res.data.solution.productionSubMenu;
+      this.solutionMenu = res.data.solution.solutionMenu;
       // this.productionMenu1 = res.data.data.productionMenu1;
-      this.solutionMenu = res.data.data.solutionMenu;
     });
   },
   mounted() {},

@@ -74,108 +74,15 @@ export default {
         src: require('../../assets/weibo.png'),
       },
     ],
-    footData: [
-      {
-        lists: [
-          {
-            id: 'nav1',
-            title: '热门产品',
-            list: [
-              {
-                id: 'navl1-1',
-                value: '可穿戴AI仿生手',
-              },
-              {
-                id: 'navl1-2',
-                value: '城市操作系统',
-              },
-              {
-                id: 'navl1-3',
-                value: '可穿戴AI仿生手',
-              },
-              {
-                id: 'navl1-4',
-                value: '城市操作系统',
-              },
-            ],
-          },
-          {
-            id: 'nav2',
-            title: '解决方案',
-            list: [
-              {
-                id: 'navl2-1',
-                value: '可穿戴AI仿生手',
-              },
-              {
-                id: 'navl2-2',
-                value: '城市操作系统',
-              },
-              {
-                id: 'navl2-3',
-                value: '可穿戴AI仿生手',
-              },
-              {
-                id: 'navl2-4',
-                value: '城市操作系统',
-              },
-              {
-                id: 'navl2-5',
-                value: '场景生态解决方案',
-              },
-            ],
-          },
-          {
-            id: 'nav3',
-            title: '快速链接',
-            list: [
-              {
-                id: 'navl3-1',
-                value: '可穿戴AI仿生手',
-              },
-              {
-                id: 'navl3-2',
-                value: '城市操作系统',
-              },
-              {
-                id: 'navl3-3',
-                value: '可穿戴AI仿生手',
-              },
-              {
-                id: 'navl3-4',
-                value: '城市操作系统',
-              },
-            ],
-          },
-          {
-            id: 'nav4',
-            title: '更多信息',
-            list: [
-              {
-                id: 'navl4-1',
-                value: '可穿戴AI仿生手',
-              },
-              {
-                id: 'navl4-2',
-                value: '城市操作系统',
-              },
-              {
-                id: 'navl4-3',
-                value: '可穿戴AI仿生手',
-              },
-              {
-                id: 'navl4-4',
-                value: '城市操作系统',
-              },
-            ],
-          },
-        ],
-      },
-    ],
+    footData: [],
   }),
   computed: {},
   watch: {},
-  created() {},
+  created() {
+    this.$http.get('/footData').then((res) => {
+      this.footData = res.data.footer.footData;
+    });
+  },
   mounted() {},
   beforeCreate() {}, // 生命周期 - 创建之前
   beforeMount() {}, // 生命周期 - 挂载之前

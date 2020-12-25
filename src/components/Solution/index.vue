@@ -50,159 +50,29 @@ export default {
     titleIntro:
       '运用数字科技服务金融和实体产业，助力各行业降低成本、提升效率、模式升级，和客户一起携手跨越、重塑增长',
     btnTxt: '查看更多',
-    tabTilData: [
-      {
-        id: 'tabTil1',
-        title: '金融机构数字化解决方案',
-      },
-      {
-        id: 'tabTil2',
-        title: '商户与企业数字化解决方案',
-      },
-      {
-        id: 'tabTil3',
-        title: '政府及其他客户数字化解决方案',
-      },
-    ],
+    tabTilData: [],
     solutionData: [], // 当前显示的选项卡
-    solutionData1: [
-      {
-        lists: [
-          {
-            id: 'Scenario',
-            src: require('@/assets/solution_financial-gov.png'),
-            title: '场景生态解决方案',
-            intro: '海量场景驱动业务创新，实现商业银行差异化竞争优势',
-          },
-          {
-            id: 'retail',
-            src: require('@/assets/solution_cashier.png'),
-            title: '智能风控解决方案',
-            intro: '为商业银行金融场景输出智能风控分析服务',
-          },
-          {
-            id: 'corpratefin',
-            src: require('@/assets/solution_customer-service.png'),
-            title: '智能运营解决方案',
-            intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
-          },
-          {
-            id: 'finmarketb',
-            src: require('@/assets/solution_data-middle.png'),
-            title: '数据中台解决方案',
-            intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
-          },
-          {
-            id: 'risk',
-            src: require('@/assets/solution_risk-management.png'),
-            title: '提供多场景多工具',
-            intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
-          },
-          {
-            id: 'aitarcb',
-            src: require('@/assets/solution_social-governance.png'),
-            title: '一体化智能营销',
-            intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
-          },
-          {
-            id: 'Intelligentop',
-            src: require('@/assets/solution_tourism.png'),
-            title: '帮助银行打造统一',
-            intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
-          },
-          {
-            id: 'dataCenter',
-            src: require('@/assets/solution_trading.png'),
-            title: '数据共享服务中心',
-            intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
-          },
-        ],
-      },
-    ],
-    solutionData2: [
-      {
-        lists: [
-          {
-            id: 'corpratefin2',
-            src: require('@/assets/solution_customer-service.png'),
-            title: '智能运营解决方案',
-            intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
-          },
-          {
-            id: 'finmarketb2',
-            src: require('@/assets/solution_data-middle.png'),
-            title: '数据中台解决方案',
-            intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
-          },
-          {
-            id: 'risk2',
-            src: require('@/assets/solution_risk-management.png'),
-            title: '提供多场景多工具',
-            intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
-          },
-          {
-            id: 'aitarcb2',
-            src: require('@/assets/solution_social-governance.png'),
-            title: '一体化智能营销',
-            intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
-          },
-          {
-            id: 'Intelligentop2',
-            src: require('@/assets/solution_tourism.png'),
-            title: '帮助银行打造统一',
-            intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
-          },
-        ],
-      },
-    ],
-    solutionData3: [
-      {
-        lists: [
-          {
-            id: 'Scenario3',
-            src: require('@/assets/solution_financial-gov.png'),
-            title: '场景生态解决方案',
-            intro: '海量场景驱动业务创新，实现商业银行差异化竞争优势',
-          },
-          {
-            id: 'retail3',
-            src: require('@/assets/solution_cashier.png'),
-            title: '智能风控解决方案',
-            intro: '为商业银行金融场景输出智能风控分析服务',
-          },
-          {
-            id: 'corpratefin3',
-            src: require('@/assets/solution_customer-service.png'),
-            title: '智能运营解决方案',
-            intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
-          },
-          {
-            id: 'finmarketb3',
-            src: require('@/assets/solution_data-middle.png'),
-            title: '数据中台解决方案',
-            intro: '帮助银行打造统一的数据共享服务中心，降低数据开发和使用成本',
-          },
-          {
-            id: 'risk3',
-            src: require('@/assets/solution_risk-management.png'),
-            title: '提供多场景多工具',
-            intro: '为广大机构提供多场景多工具多策略的一体化智能营销运营合作',
-          },
-        ],
-      },
-    ],
+    solutionData1: [],
+    solutionData2: [],
+    solutionData3: [],
     nowIndex: 0,
   }),
   computed: {},
   watch: {},
   created() {
-    this.solutionData = this.solutionData1;
-
-    // this.$http.get('/solution').then((res) => {
-    //   console.log(res);
-    //   this.tabTilData = res.data.data.tabTilData;
-    //   // this.solutionData = res.data.data.solutionData;
-    // });
+    this.$http.get('/solution').then((res) => {
+      console.log(res);
+      this.tabTilData = res.data.solution.tabTilData;
+      // mock数据
+      // this.solutionData1.push(res.data.solution.solutionData[0]);
+      // this.solutionData2.push(res.data.solution.solutionData[1]);
+      // this.solutionData3.push(res.data.solution.solutionData[2]);
+      // 写死数据
+      this.solutionData1 = res.data.solution.solutionData1;
+      this.solutionData2 = res.data.solution.solutionData2;
+      this.solutionData3 = res.data.solution.solutionData3;
+      this.solutionData = this.solutionData1;
+    });
   },
   mounted() {},
   beforeCreate() {}, // 生命周期 - 创建之前
