@@ -1,5 +1,6 @@
 <template>
-  <div class="footer-main" id="footer-main">
+  <div class="footer-main"
+       :style="{background: bgColor=='home' ? '#010103' : '#00041a'}">
     <div class="footer-box">
       <div class="foot-cont flex">
         <div class="contract-box flex1">
@@ -52,7 +53,12 @@
 export default {
   name: 'Footer',
   components: {},
-  props: {},
+  props: {
+    bgColor: {
+      type: String,
+      required: true,
+    },
+  },
   data: () => ({
     contract_tel: '咨询热线',
     contract_addr: '地址：北京亦庄经济技术开发区科创十一街18号院',
@@ -79,6 +85,7 @@ export default {
   computed: {},
   watch: {},
   created() {
+    console.log(this.bgColor);
     this.$http.get('/footData').then((res) => {
       this.footData = res.data.footer.footData;
     });
@@ -98,7 +105,6 @@ export default {
 <style lang="less" scoped>
 .footer-main {
   width: 100%;
-  background: #00041a;
 
   .footer-box {
     width: 1200px;

@@ -8,7 +8,12 @@
     </div>
 
     <!-- 底部 -->
-    <Footer />
+    <template v-if="$route.name=='home'">
+      <Footer :bgColor="'home'" />
+    </template>
+    <template v-else>
+      <Footer :bgColor="'other'" />
+    </template>
   </div>
 </template>
 
