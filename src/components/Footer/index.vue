@@ -85,7 +85,6 @@ export default {
   computed: {},
   watch: {},
   created() {
-    console.log(this.bgColor);
     this.$http.get('/footData').then((res) => {
       this.footData = res.data.footer.footData;
     });

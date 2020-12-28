@@ -10,28 +10,864 @@ const menuData = (req) => {
   const solution = Mock.mock(
     {
       'solutionMenu|3': [{
-        id: Random.id(),
+        'id|+1': 999,
         title: Random.ctitle(6, 14), // 随机生成长度为10-25的标题
         children: [
           {
-            'id|+1': 0,
+            'id|+1': 1,
             subtitle: Random.ctitle(6, 10),
-            'children|6': [
+            'children|10': [
               {
-                id: Random.id(),
+                'id|+1': 12,
+                value: Random.ctitle(6, 10),
+              },
+            ],
+          },
+          {
+            'id|+1': 5,
+            subtitle: Random.ctitle(6, 10),
+            'children|10': [
+              {
+                'id|+1': 100,
                 value: Random.ctitle(6, 10),
               },
             ],
           },
         ],
       }],
-      'productionSubMenu|4': [{
-        'id|+1': 0,
-        title: Random.ctitle(6, 10),
-      }],
-      'productionMenu|10': [{
-
-      }],
+      productionSubMenu: [
+        {
+          id: '1111',
+          title: 'AI科技',
+        },
+        {
+          id: '2222',
+          title: '金融科技',
+        },
+        {
+          id: '3333',
+          title: '智能城市',
+        },
+        {
+          id: '4444',
+          title: '数字营销',
+        },
+      ],
+      productionMenu: {
+        lists: [
+          [
+            {
+              id: 'ai11111',
+              title: '智能机器人',
+              children: [
+                {
+                  id: 'ai1-1',
+                  // subtitle: '',
+                  children: [
+                    {
+                      id: 'ai1-1-1',
+                      value: '可穿戴AI仿生手',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ai1-1-2',
+                      value: '挂轨式巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ai1-1-3',
+                      value: '室内运送AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ai1-1-4',
+                      value: '商服AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ai1-1-5',
+                      value: '机房巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ai1-1-6',
+                      value: '大零售解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ai1-1-7',
+                      value: '铁路巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ai1-1-8',
+                      value: '场景生态解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ai1-1-9',
+                      value: '室内运送AI机器人',
+                      new: false,
+                      hot: true,
+                    },
+                    {
+                      id: 'ai1-1-10',
+                      value: '大零售解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'lian22222',
+              title: '区块链',
+              children: [
+                {
+                  id: 'lian2-1',
+                  // subtitle: '',
+                  children: [
+                    {
+                      id: 'lian2-1-1',
+                      value: '智臻链防伪追溯平台',
+                      new: true,
+                      hot: false,
+                    },
+                    {
+                      id: 'lian2-1-2',
+                      value: '智臻链数字存证平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'lian2-1-3',
+                      value: '氢舟数字资产产权服务平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'lian2-1-4',
+                      value: '智臻链JD Chain引擎',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'data33333',
+              title: '大数据',
+              children: [
+                {
+                  id: 'data3-1',
+                  subtitle: '数据服务',
+                  children: [
+                    {
+                      id: 'data3-1-1',
+                      value: '稻田数据服务平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'data3-1-2',
+                      value: '京东众智AI数据标注',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'data3-1-3',
+                      value: '智能大数据可视化',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'data3-1-4',
+                      value: '数据咨询',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+                {
+                  id: 'data3-2',
+                  subtitle: '数据中台',
+                  children: [
+                    {
+                      id: 'data3-2-1',
+                      value: '深海大数据平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'data3-2-2',
+                      value: '机器学习平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'data3-2-3',
+                      value: '图计算平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'data3-2-4',
+                      value: '画像系统',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'farm44444',
+              title: '农业',
+              children: [
+                {
+                  id: 'farm4-1',
+                  subtitle: '农业服务',
+                  children: [
+                    {
+                      id: 'farm4-1-1',
+                      value: '智能监测站',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'farm4-1-2',
+                      value: '智能喷淋',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'farm4-1-3',
+                      value: '智能饲喂器',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'farm4-1-4',
+                      value: '智能投喂',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+          [
+            {
+              id: 'ren11111',
+              title: '智能机器人',
+              children: [
+                {
+                  id: 'ren1-1',
+                  // subtitle: '',
+                  children: [
+                    {
+                      id: 'ren1-1-1',
+                      value: '可穿戴AI仿生手',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ren1-1-2',
+                      value: '挂轨式巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ren1-1-3',
+                      value: '室内运送AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ren1-1-4',
+                      value: '商服AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ren1-1-5',
+                      value: '机房巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ren1-1-6',
+                      value: '大零售解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ren1-1-7',
+                      value: '铁路巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ren1-1-8',
+                      value: '场景生态解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'ren1-1-9',
+                      value: '室内运送AI机器人',
+                      new: false,
+                      hot: true,
+                    },
+                    {
+                      id: 'ren1-1-10',
+                      value: '大零售解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'qu22222',
+              title: '区块链',
+              children: [
+                {
+                  id: 'qu2-1',
+                  // subtitle: '',
+                  children: [
+                    {
+                      id: 'qu2-1-1',
+                      value: '智臻链防伪追溯平台',
+                      new: true,
+                      hot: false,
+                    },
+                    {
+                      id: 'qu2-1-2',
+                      value: '智臻链数字存证平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'qu2-1-3',
+                      value: '氢舟数字资产产权服务平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'qu2-1-4',
+                      value: '智臻链JD Chain引擎',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'da33333',
+              title: '大数据',
+              children: [
+                {
+                  id: 'da3-1',
+                  subtitle: '数据服务',
+                  children: [
+                    {
+                      id: 'da3-1-1',
+                      value: '稻田数据服务平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'da3-1-2',
+                      value: '京东众智AI数据标注',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'da3-1-3',
+                      value: '智能大数据可视化',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'da3-1-4',
+                      value: '数据咨询',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+                {
+                  id: 'da3-2',
+                  subtitle: '数据中台',
+                  children: [
+                    {
+                      id: 'da3-2-1',
+                      value: '深海大数据平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'da3-2-2',
+                      value: '机器学习平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'da3-2-3',
+                      value: '图计算平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'da3-2-4',
+                      value: '画像系统',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'nong44444',
+              title: '农业',
+              children: [
+                {
+                  id: 'nong4-1',
+                  subtitle: '农业服务',
+                  children: [
+                    {
+                      id: 'nong4-1-1',
+                      value: '智能监测站',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'nong4-1-2',
+                      value: '智能喷淋',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'nong4-1-3',
+                      value: '智能饲喂器',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'nong4-1-4',
+                      value: '智能投喂',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'lin55555',
+              title: '林业',
+              children: [
+                {
+                  id: 'lin5-1',
+                  subtitle: '林业服务',
+                  children: [
+                    {
+                      id: 'lin5-1-1',
+                      value: '智能监测站',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'lin5-1-2',
+                      value: '喷淋打分法',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'lin5-1-3',
+                      value: '能昂饲喂器',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'lin5-1-4',
+                      value: '是搭嘎三道岗投喂',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+                {
+                  id: 'lin5-2',
+                  children: [
+                    {
+                      id: 'lin5-2-1',
+                      value: 'k娄底市附近监测站',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'lin5-2-2',
+                      value: '喷淋灌溉',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'lin5-2-3',
+                      value: '蛋个饲喂器',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'lin5-2-4',
+                      value: '投喂低功耗哈哈',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+          [
+            {
+              id: 'neng11111',
+              title: '智能机器人',
+              children: [
+                {
+                  id: 'neng1-1',
+                  // subtitle: '',
+                  children: [
+                    {
+                      id: 'neng1-1-1',
+                      value: '可穿戴AI仿生手',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'neng1-1-2',
+                      value: '挂轨式巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'neng1-1-3',
+                      value: '室内运送AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'neng1-1-4',
+                      value: '商服AI机器人',
+                      new: false,
+                      hot: true,
+                    },
+                    {
+                      id: 'neng1-1-5',
+                      value: '机房巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'neng1-1-6',
+                      value: '大零售解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'neng1-1-7',
+                      value: '铁路巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'neng1-1-8',
+                      value: '场景生态解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'neng1-1-9',
+                      value: '室内运送AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'neng1-1-10',
+                      value: '大零售解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'kuai22222',
+              title: '区块链',
+              children: [
+                {
+                  id: 'kuai2-1',
+                  // subtitle: '',
+                  children: [
+                    {
+                      id: 'kuai2-1-1',
+                      value: '智臻链防伪追溯平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'kuai2-1-2',
+                      value: '智臻链数字存证平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'kuai2-1-3',
+                      value: '氢舟数字资产产权服务平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'kuai2-1-4',
+                      value: '智臻链JD Chain引擎',
+                      new: true,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+          [
+            {
+              id: 'qi11111',
+              title: '智能机器人',
+              children: [
+                {
+                  id: 'qi1-1',
+                  // subtitle: '',
+                  children: [
+                    {
+                      id: 'qi1-1-1',
+                      value: '可穿戴AI仿生手',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'qi1-1-2',
+                      value: '挂轨式巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'qi1-1-3',
+                      value: '室内运送AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'qi1-1-4',
+                      value: '商服AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'qi1-1-5',
+                      value: '机房巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'qi1-1-6',
+                      value: '大零售解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'qi1-1-7',
+                      value: '铁路巡检AI机器人',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'qi1-1-8',
+                      value: '场景生态解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'qi1-1-9',
+                      value: '室内运送AI机器人',
+                      new: false,
+                      hot: true,
+                    },
+                    {
+                      id: 'qi1-1-10',
+                      value: '大零售解决方案',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'line22222',
+              title: '区块链',
+              children: [
+                {
+                  id: 'line2-1',
+                  // subtitle: '',
+                  children: [
+                    {
+                      id: 'line2-1-1',
+                      value: '智臻链防伪追溯平台',
+                      new: true,
+                      hot: false,
+                    },
+                    {
+                      id: 'line2-1-2',
+                      value: '智臻链数字存证平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'line2-1-3',
+                      value: '氢舟数字资产产权服务平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'line2-1-4',
+                      value: '智臻链JD Chain引擎',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'shu33333',
+              title: '大数据',
+              children: [
+                {
+                  id: 'shu3-1',
+                  subtitle: '数据服务',
+                  children: [
+                    {
+                      id: 'shu3-1-1',
+                      value: '稻田数据服务平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'shu3-1-2',
+                      value: '京东众智AI数据标注',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'shu3-1-3',
+                      value: '智能大数据可视化',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'shu3-1-4',
+                      value: '数据咨询',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+                {
+                  id: 'shu3-2',
+                  subtitle: '数据中台',
+                  children: [
+                    {
+                      id: 'shu3-2-1',
+                      value: '深海大数据平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'shu3-2-2',
+                      value: '机器学习平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'shu3-2-3',
+                      value: '图计算平台',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'shu3-2-4',
+                      value: '画像系统',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: 'farmer44444',
+              title: '农业',
+              children: [
+                {
+                  id: 'farmer4-1',
+                  subtitle: '农业服务',
+                  children: [
+                    {
+                      id: 'farmer4-1-1',
+                      value: '智能监测站',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'farmer4-1-2',
+                      value: '智能喷淋',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'farmer4-1-3',
+                      value: '智能饲喂器',
+                      new: false,
+                      hot: false,
+                    },
+                    {
+                      id: 'farmer4-1-4',
+                      value: '智能投喂',
+                      new: false,
+                      hot: false,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        ],
+      },
     },
   );
 
@@ -44,23 +880,53 @@ const menuData = (req) => {
 // 轮播
 const sliderData = (req) => {
   // console.log(req); // 请求体，用于获取参数
-  const slides = []; // 用于存放文章数据的数组
+  // const slides = []; // 用于存放文章数据的数组
 
-  for (let i = 0; i < 4; i += 1) {
-    const post = {
-      title1: Random.ctitle(6, 14), // 随机生成长度为10-25的标题
-      title2: Random.ctitle(10, 25),
-      paragraphs: Random.csentence(),
-      href: Random.url('https'),
+  // for (let i = 0; i < 4; i += 1) {
+  //   const post = {
+  //     title1: Random.ctitle(6, 14), // 随机生成长度为10-25的标题
+  //     title2: Random.ctitle(10, 25),
+  //     paragraphs: Random.csentence(),
+  //     href: Random.url('https'),
+  //     hrefTxt: '查看更多',
+  //     src: `https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattach.bbs.miui.com
+  //     %2Fforum%2F201402%2F02%2F082719z1qbm28mff3ms5c0.jpg&refer=http%3A%2F%2Fa
+  //     ttach.bbs.miui.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?
+  //     sec=1611475328&t=a66fc9b89ca047e4fe74d1944e7dac50`,
+  //   };
+
+  //   slides.push(post);
+  // }
+
+  const slides = [
+    {
+      src: require('@/assets/carousel-3.png'),
+      title1: '央媒省媒聚焦',
+      title2: '南通市域治理现代化',
+      paragraphs: `江苏省南通市基于京东数科“智能城市操作系统”
+      建成市域治理现代化指挥中心`,
       hrefTxt: '查看更多',
-      src: `https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattach.bbs.miui.com
-      %2Fforum%2F201402%2F02%2F082719z1qbm28mff3ms5c0.jpg&refer=http%3A%2F%2Fa
-      ttach.bbs.miui.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?
-      sec=1611475328&t=a66fc9b89ca047e4fe74d1944e7dac50`,
-    };
-
-    slides.push(post);
-  }
+      href: 'https://www.jddglobal.com/',
+    },
+    {
+      src: require('@/assets/carousel-2.png'),
+      title1: '助智能城市展翼',
+      title2: '与实体产业共进',
+      paragraphs: `京东全球科技探索者大会于25日在京举办。京东数字科技集团CEO陈生强做了题为“助智能城市展翼
+      与实体产业共进”的主题发言`,
+      hrefTxt: '去手机APP查看',
+      href: 'https://www.jddglobal.com/',
+    },
+    {
+      src: require('@/assets/carousel-1.png'),
+      title1: 'T1金融云跻身中国金融云平台',
+      title2: '解决方案市场五强',
+      paragraphs: `IDC最新发布报告显示，京东数科T1金融云进入金融云平台解决方案市场前五名，
+      在中国金融云（平台）解决方案市场上占据了9.5%的市场份额`,
+      hrefTxt: '查看更多',
+      href: 'https://www.jddglobal.com/',
+    },
+  ];
   const slidersData = {
     slideSpeed: Random.float(3000, 6000),
     slides,
@@ -245,15 +1111,15 @@ const product = (req) => {
   const products = Mock.mock(
     {
       'productDatas|4': [{
-        id: Random.id(),
+        'id+1': `proD${0}`,
         title: Random.ctitle(4), // 随机生成长度为10-25的标题
         'children|3-7': [
           {
-            id: Random.id(),
+            'id+1': `proD_c${0}`,
             subtitle: Random.ctitle(2, 7),
             'children|1-9': [
               {
-                id: Random.id(),
+                'id+1': `proD_c_c${0}`,
                 contTitle: Random.ctitle(6, 16),
                 contBody: Random.ctitle(10, 46),
               },
@@ -280,11 +1146,11 @@ const caseData = (req) => {
         btnTxt: '查看更多',
         'caseImgs|12': [
           {
-            'id+1': `caseIcon${0}`,
+            'id+1': 111,
             src: require('@/assets/index_case_icon_1.png'),
             list: [
               {
-                'id+1': `case${0}`,
+                'id+1': 63,
                 title: Random.ctitle(8, 36),
                 conts: Random.cparagraph(),
                 btnTxt: '了解详情',

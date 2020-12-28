@@ -2,11 +2,11 @@
   <div class="submenu-main">
     <div v-for="item in menudata" :key="item.id">
       <h3 class="title">{{ item.title }}</h3>
-      <label v-for="item in item.children" :key="item.id">
+      <label v-for="item in item.children" :key="item.id" :data-id="item.id">
         <!-- 有二级标题 -->
         <ul class="sub-conts" v-if="item.children">
           <h4 class="subtitle">{{ item.subtitle }}</h4>
-          <li class="items" v-for="item in item.children" :key="item.id">
+          <li class="items" v-for="item in item.children" :key="item.id" :data-id="item.id">
             {{ item.value }}
             <!-- new or hot -->
             <i v-show="item.hot" class="ln2-hot" />
@@ -15,7 +15,7 @@
         </ul>
         <!-- 无二级标题 -->
         <ul class="sub-conts" v-else>
-          <li class="items">
+          <li class="items" v-for="item in item.children" :key="item.id" :data-id="item.id">
             {{ item.value }}
             <i v-show="item.hot" class="ln2-hot" />
             <i v-show="item.new" class="ln2-new" />
@@ -54,6 +54,9 @@ export default {
 
 <style lang="less" scoped>
 .submenu-main {
+  display: flex;
+  justify-content: space-around;
+
   div {
     margin-bottom: 20px;
 

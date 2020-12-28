@@ -377,7 +377,4 @@ export default {
     }
   }
 }
-// #footer-main {
-//   background: #010103!important;
-// }
 </style>

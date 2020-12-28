@@ -24,7 +24,7 @@
         </a>
       </div>
     </div>
-    <div class="tabCont-box">
+    <div class="tabCont-box" v-if="proDatas[nowIndex]">
       <template v-if="proDatas[nowIndex].children[subNowIndex].subtitle">
         <div class="tabCont-tab-box flex">
           <ul class="tabCont-title-box flex">

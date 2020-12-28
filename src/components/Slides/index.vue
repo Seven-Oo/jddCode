@@ -1,6 +1,6 @@
 <template>
   <div class="slides-main" @mouseover="clearInv" @mouseout="runInv">
-    <div class="banner-box">
+    <div class="banner-box" v-if="slides[nowIndex]">
       <img :src="slides[nowIndex].src" alt="" >
 
       <transition name="slide-trans">

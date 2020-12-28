@@ -14,21 +14,20 @@
           </template>
           <div class="production-menu">
             <div class="left">
-              <div class="items" v-for="item in productionSubMenu" :key="item.id">
+              <div class="items" v-for="(item, index) in productionSubMenu" :key="item.id"
+                   @mouseover="changeProTab(index)" :class="{active: index==proNowIndex}">
                 <span class="title">{{ item.title }}</span>
                 <i class="ln2-arrow_right" />
               </div>
             </div>
             <div class="right">
-              <Submenu :menudata="productionMenu" />
+              <Submenu :menudata="proMenu" />
             </div>
           </div>
         </el-submenu>
         <el-submenu index="2" popper-class="solution" :popper-append-to-body="false">
           <template slot="title"> <span @click="go2('/solution')">解决方案</span></template>
           <div class="solution-menu">
-            <Submenu :menudata="solutionMenu" />
-            <Submenu :menudata="solutionMenu" />
             <Submenu :menudata="solutionMenu" />
           </div>
         </el-submenu>
@@ -59,15 +58,17 @@ export default {
     solutionMenu: [],
     productionSubMenu: [],
     productionMenu: [],
+    proMenu: [],
+    proNowIndex: 0,
   }),
   computed: {},
   watch: {},
   created() {
     this.$http.get('/menuData').then((res) => {
-      console.log(res);
       this.productionSubMenu = res.data.solution.productionSubMenu;
       this.solutionMenu = res.data.solution.solutionMenu;
-      // this.productionMenu1 = res.data.data.productionMenu1;
+      this.productionMenu = res.data.solution.productionMenu.lists;
+      this.proMenu = res.data.solution.productionMenu.lists[0];
     });
   },
   mounted() {},
@@ -85,6 +86,10 @@ export default {
     },
     go2(path) {
       this.$router.push(path);
+    },
+    changeProTab(index) {
+      this.proNowIndex = index;
+      this.proMenu = this.productionMenu[index];
     },
   },
 };
@@ -279,8 +284,9 @@ export default {
       position: relative;
       display: flex;
       justify-content: space-between;
-
-      &:hover {
+    }
+    .items.active,
+    .items:hover {
         background: linear-gradient(90deg, #4c9eff, #195aff);
         transition: all 0.2s ease;
         margin: 0;
@@ -304,7 +310,6 @@ export default {
           padding-right: 36px;
         }
       }
-    }
 
     .ln2-arrow_right {
       color: #fff;
@@ -313,8 +318,6 @@ export default {
   }
   .right {
     width: 940px;
-    display: flex;
-    justify-content: space-around;
     padding: 20px 0 10px 0;
     height: 560px;
     overflow: auto;
@@ -336,10 +339,6 @@ export default {
     background-size: cover;
     padding: 30px 0;
   }
-}
-.solution-menu {
-  display: flex;
-  justify-content: space-around;
 }
 ::v-deep .about {
   top: 65px !important;

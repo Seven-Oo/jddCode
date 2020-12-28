@@ -61,7 +61,6 @@ export default {
   watch: {},
   created() {
     this.$http.get('/solution').then((res) => {
-      console.log(res);
       this.tabTilData = res.data.solution.tabTilData;
       // mock数据
       // this.solutionData1.push(res.data.solution.solutionData[0]);

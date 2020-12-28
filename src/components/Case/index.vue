@@ -217,7 +217,7 @@ export default {
         li {
           position: relative;
           display: inline-block;
-          width: 200.5px;
+          width: 199.05px;
           height: 120px;
           line-height: 12;
           box-sizing: border-box;
@@ -248,8 +248,6 @@ export default {
           z-index: 10;
           border: 1px solid #195aff;
           box-shadow: 0 3px 10px 0 rgba(33, 96, 251, 0.16);
-          margin-right: 0;
-          margin-bottom: 0;
         }
       }
     }
