@@ -83,6 +83,10 @@ export default {
   height: 610px;
   background: #dae0e9 url('../../assets/index_case_bg.jpg') no-repeat center center;
 
+  .main-wrap {
+    z-index: 1;
+  }
+
   .case-title {
     position: relative;
     padding-top: 60px;

@@ -118,9 +118,7 @@ export default {
       this.newsDatas = res.data.newsWraper.newsDatas;
     });
   },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll, true);
-  },
+  mounted() {},
   methods: {
     bannerEnter(event) {
       const { offsetX, offsetY } = event;
@@ -141,23 +139,8 @@ export default {
         this.coordinateY = 0;
       };
     }, 250),
-    handleScroll() {
-      const scrollTop = window.pageYOffset
-      || document.documentElement.scrollTop || document.body.scrollTop;
-
-      if (scrollTop >= 70) {
-        document.querySelector('.topnav-main').style.backgroundColor = '#fff';
-        document.querySelector('.topnav-main').style.boxShadow = '0 2px 15px 0 rgba(0,72,174,.15)';
-      } else {
-        document.querySelector('.topnav-main').style.backgroundColor = 'transparent';
-        document.querySelector('.topnav-main').style.boxShadow = 'none';
-      }
-    },
   },
-  destroyed() {
-    // 离开该页面需要移除这个监听的事件
-    window.removeEventListener('scroll', this.handleScroll);
-  },
+  destroyed() {},
 };
 </script>
 

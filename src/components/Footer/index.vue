@@ -1,6 +1,14 @@
 <template>
   <div class="footer-main"
-       :style="{background: bgColor=='home' ? '#010103' : '#00041a'}">
+       :style="{background: bgColor}">
+    <div class="footer-slogan" v-if="showSlogan">
+      <div class="main-wrap">
+        <div class="slogan-box">
+          <img src="@/assets/index_news_slogan.svg" alt="">
+          <a href="#">{{sloganTxt}}</a>
+        </div>
+      </div>
+    </div>
     <div class="footer-box">
       <div class="foot-cont flex">
         <div class="contract-box flex1">
@@ -58,8 +66,12 @@ export default {
       type: String,
       required: true,
     },
+    showSlogan: {
+      type: Boolean,
+    },
   },
   data: () => ({
+    sloganTxt: '获取方案',
     contract_tel: '咨询热线',
     contract_addr: '地址：北京亦庄经济技术开发区科创十一街18号院',
     contract_tool: [
@@ -104,6 +116,41 @@ export default {
 <style lang="less" scoped>
 .footer-main {
   width: 100%;
+
+  .footer-slogan {
+    height: 220px;
+    padding-top: 64px;
+    box-sizing: border-box;
+    background: url('../../assets/common_footer.jpg') no-repeat top #2c68ff;
+
+    .slogan-box {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      height: 34px;
+      transform: translate(-50%, 0);
+
+      a {
+        border: 1px solid hsla(0,0%,100%,.2);
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: -70px;
+        width: 130px;
+        height: 46px;
+        line-height: 46px;
+        font-size: 16px;
+        margin: 0 auto;
+        opacity: 1;
+
+        &:hover {
+          background: hsla(0,0%,100%,.1);
+        }
+      }
+    }
+  }
 
   .footer-box {
     width: 1200px;

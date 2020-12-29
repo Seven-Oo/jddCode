@@ -1354,3 +1354,36 @@ Mock.mock(`${domain}/product`, 'get', product);
 Mock.mock(`${domain}/case`, 'get', caseData);
 Mock.mock(`${domain}/news`, 'get', news);
 Mock.mock(`${domain}/footData`, 'get', foot);
+
+// 数科
+const topIntroData = (req) => {
+  const introData = [];
+  const newsData = [];
+  for (let i = 0; i < 3; i += 1) {
+    introData.push(Mock.mock({
+      id: '@increment',
+      title: '@ctitle(18, 36)',
+      imgSrc: require('@/assets/trend-2.png'),
+      author: '@cname',
+      pub_time: '@date',
+      href: '@url("https")',
+    }));
+  }
+  for (let i = 0; i < 40; i += 1) {
+    newsData.push(Mock.mock({
+      id: '@increment',
+      title: '@ctitle(18, 36)',
+      conts: '@cparagraph(20)',
+      imgSrc: require('@/assets/dynamic_news_1.png'),
+      author: '@cname',
+      pub_time: '@date',
+      href: '@url("https")',
+    }));
+  }
+  return {
+    code,
+    introData,
+    newsData,
+  };
+};
+Mock.mock(`${domain}/dynamic/topIntro`, 'get', topIntroData);

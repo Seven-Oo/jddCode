@@ -10,6 +10,7 @@ import App from './App.vue';
 import { router } from './router';
 import './router/routeHooks';
 import store from './store';
+import star from './utils/drawStar';
 
 // 自动注册
 import '@/components/autoRegister';
