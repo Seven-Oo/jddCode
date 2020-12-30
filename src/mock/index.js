@@ -1387,3 +1387,346 @@ const topIntroData = (req) => {
   };
 };
 Mock.mock(`${domain}/dynamic/topIntro`, 'get', topIntroData);
+
+// 关于我们
+const aboutData = (req) => {
+  const introDesc = [];
+  for (let i = 0; i < 6; i += 1) {
+    introDesc.push(Mock.mock({
+      id: '@increment',
+      conts: '@cparagraph(20)',
+    }));
+  }
+  const introData = {
+    id: 'introJD',
+    title: '公司介绍',
+    introList: introDesc,
+  };
+
+  const valueArr = [
+    {
+      id: 'value1',
+      iconSrc: require('@/assets/about_icon_1.png'),
+      title: '客户为先',
+      conts: '始终是京东不断前行的动力源泉',
+    },
+    {
+      id: 'value2',
+      iconSrc: require('@/assets/about_icon_2.png'),
+      title: '诚信为本',
+      conts: '是京东的商业准绳',
+    },
+    {
+      id: 'value3',
+      iconSrc: require('@/assets/about_icon_3.png'),
+      title: '团结合作',
+      conts: '每位京东人团队精神的基本',
+    },
+    {
+      id: 'value4',
+      iconSrc: require('@/assets/about_icon_4.png'),
+      title: '感恩之心',
+      conts: '京东人处事情怀，会让人一生快乐',
+    },
+    {
+      id: 'value5',
+      iconSrc: require('@/assets/about_icon_5.png'),
+      title: '拼搏进取',
+      conts: '京东人身上最闪亮的精神',
+    },
+    {
+      id: 'value6',
+      iconSrc: require('@/assets/about_icon_6.png'),
+      title: '敢于担当',
+      conts: '每位京东人团队精神的基本',
+    },
+  ];
+  const valueData = {
+    id: 'valueJD',
+    title: '价值观',
+    desc: '数科人的精神准则，也是京东的价值观延续',
+    valueList: valueArr,
+  };
+
+  const dutyArr1 = [
+    {
+      id: 'duty1',
+      imgSrc: require('@/assets/about_img_2.png'),
+      title: '数字普惠',
+      conts: `京东数科数字农贷积极帮助农民减少 60% 利息负担, 
+      让守法有信、经营良好的传统企业能享受便捷的企业金融服务。`,
+    },
+    {
+      id: 'duty2',
+      imgSrc: require('@/assets/about_img_3.png'),
+      title: '数字扶贫',
+      conts: `用数字科技去做对的事，数字就变得温情并有能量。
+      消费即公益、购买即慈善，京东数字科技响应国家号召，助力精准脱贫。`,
+    },
+  ];
+  const dutyArr2 = [
+    {
+      id: 'duty3',
+      imgSrc: require('@/assets/about_img_4.png'),
+      title: '数字安全',
+      conts: `敬畏风险，守护您的安全。数科风控体系利用深度学习、
+      图计算等人工智能技术实现无人工审核授信和放款，坏账率和资损水平低于行业平均值约 50% 以上。`,
+    },
+    {
+      id: 'duty4',
+      imgSrc: require('@/assets/about_img_2.png'),
+      title: '人才培养',
+      conts: `京东数科在未来三年：
+      让85后核心管理者超过30%，让90后的经理和高级经理层员工要超过50%，并且增加主要来自内部晋升。`,
+    },
+  ];
+  const dutyData = {
+    id: 'dutyJD',
+    title: '社会责任',
+    rightTxt: '查看更多',
+    rightHref: '',
+    dutyList1: dutyArr1,
+    dutyList2: dutyArr2,
+  };
+
+  const timeLineList = [{
+    id: '2012',
+    timestamp: '2012年',
+    children: [
+      {
+        id: '2012-6-1',
+        title: '2012年6月大事记',
+        infoList: [
+          {
+            id: '2012-6-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+          {
+            id: '2012-6-info2',
+            info: `我们成功于深交所发行首个互联网消费金融ABS项目，
+          在随后的5年时间里我们于上交所发行首单互联网保理ABS首次推出“ABS云平台”
+          在银行间市场发行首单消费金融信托型ABN、首单互联网消费金融ABN债券通，
+          首次将区块链技术应用于ABS产品，并与金融机构共同落地全球首个ABS联盟链。`,
+          },
+        ],
+      },
+      {
+        id: '2012-10-1',
+        title: '2012年10月大事记',
+        infoList: [
+          {
+            id: '2012-10-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+        ],
+      },
+    ],
+  }, {
+    id: '2013',
+    timestamp: '2013年',
+    children: [
+      {
+        id: '2013-1-1',
+        title: '2013年1月大事记',
+        infoList: [
+          {
+            id: '2013-1-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+        ],
+      },
+      {
+        id: '2013-11-1',
+        title: '2013年11月大事记',
+        infoList: [
+          {
+            id: '2013-11-info1',
+            info: `在随后的5年时间里我们于上交所发行首单互联网保理ABS首次推出“ABS云平台”
+            在银行间市场发行首单消费金融信托型ABN、首单互联网消费金融ABN债券通`,
+          },
+        ],
+      },
+    ],
+  }, {
+    id: '2014',
+    timestamp: '2014年',
+    children: [
+      {
+        id: '2014-8-1',
+        title: '2014年8月大事记',
+        infoList: [
+          {
+            id: '2014-8-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+          {
+            id: '2014-8-info2',
+            info: `我们成功于深交所发行首个互联网消费金融ABS项目，
+          在随后的5年时间里我们于上交所发行首单互联网保理ABS首次推出“ABS云平台”
+          在银行间市场发行首单消费金融信托型ABN、首单互联网消费金融ABN债券通，
+          首次将区块链技术应用于ABS产品，并与金融机构共同落地全球首个ABS联盟链。`,
+          },
+        ],
+      },
+    ],
+  }, {
+    id: '2015',
+    timestamp: '2015年',
+    children: [
+      {
+        id: '2015-6-1',
+        title: '2015年6月大事记',
+        infoList: [
+          {
+            id: '2015-6-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+          {
+            id: '2015-6-info2',
+            info: `我们成功于深交所发行首个互联网消费金融ABS项目，
+          在随后的5年时间里我们于上交所发行首单互联网保理ABS首次推出“ABS云平台”
+          在银行间市场发行首单消费金融信托型ABN、首单互联网消费金融ABN债券通，
+          首次将区块链技术应用于ABS产品，并与金融机构共同落地全球首个ABS联盟链。`,
+          },
+        ],
+      },
+      {
+        id: '2015-10-1',
+        title: '2015年10月大事记',
+        infoList: [
+          {
+            id: '2015-10-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+        ],
+      },
+    ],
+  }, {
+    id: '2016',
+    timestamp: '2016年',
+    children: [
+      {
+        id: '2016-6-1',
+        title: '2016年6月大事记',
+        infoList: [
+          {
+            id: '2016-6-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+          {
+            id: '2016-6-info2',
+            info: `我们成功于深交所发行首个互联网消费金融ABS项目，
+          在随后的5年时间里我们于上交所发行首单互联网保理ABS首次推出“ABS云平台”
+          在银行间市场发行首单消费金融信托型ABN、首单互联网消费金融ABN债券通，
+          首次将区块链技术应用于ABS产品，并与金融机构共同落地全球首个ABS联盟链。`,
+          },
+        ],
+      },
+      {
+        id: '2016-10-1',
+        title: '2016年10月大事记',
+        infoList: [
+          {
+            id: '2016-10-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+        ],
+      },
+    ],
+  }, {
+    id: '2019',
+    timestamp: '2019年',
+    children: [
+      {
+        id: '2019-6-1',
+        title: '2019年6月大事记',
+        infoList: [
+          {
+            id: '2019-6-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+          {
+            id: '2019-6-info2',
+            info: `我们成功于深交所发行首个互联网消费金融ABS项目，
+          在随后的5年时间里我们于上交所发行首单互联网保理ABS首次推出“ABS云平台”
+          在银行间市场发行首单消费金融信托型ABN、首单互联网消费金融ABN债券通，
+          首次将区块链技术应用于ABS产品，并与金融机构共同落地全球首个ABS联盟链。`,
+          },
+        ],
+      },
+      {
+        id: '2019-10-1',
+        title: '2019年10月大事记',
+        infoList: [
+          {
+            id: '2019-10-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+        ],
+      },
+    ],
+  }];
+  const eventData = {
+    id: 'eventJD',
+    title: '数科大事记',
+    eventList: timeLineList,
+  };
+
+  const envArr = [
+    {
+      id: 'env1',
+      imgSrc: require('@/assets/about_env_1.png'),
+      title: '总部大楼',
+      conts: `位于北京市大兴区亦庄经济开发区，总占地4.5公顷，
+      总建筑面积28.4万平米，由3栋80-100米高楼构成位于北京市大兴区亦庄经济开发区，总占地4.5公顷，
+      总建筑面积28.4万平米，由3栋80-100米高楼构成`,
+    },
+    {
+      id: 'env2',
+      imgSrc: require('@/assets/about_env_4.png'),
+      title: '健身房',
+      conts: `齐全的健身器材，想练哪里就练哪里，操课丰富，
+      瑜伽、搏击操、爵士舞等多种选择`,
+    },
+    {
+      id: 'env3',
+      imgSrc: require('@/assets/about_env_4.png'),
+      title: '健身房',
+      conts: `齐全的健身器材，想练哪里就练哪里，操课丰富，
+      瑜伽、搏击操、爵士舞等多种选择`,
+    },
+    {
+      id: 'env4',
+      imgSrc: require('@/assets/about_env_1.png'),
+      title: '总部大楼',
+      conts: `位于北京市大兴区亦庄经济开发区，总占地4.5公顷，
+      总建筑面积28.4万平米，由3栋80-100米高楼构成位于北京市大兴区亦庄经济开发区，总占地4.5公顷，
+      总建筑面积28.4万平米，由3栋80-100米高楼构成`,
+    },
+  ];
+  const envData = {
+    id: 'envJD',
+    title: '公司环境',
+    envList: envArr,
+  };
+
+  return {
+    code,
+    introData,
+    valueData,
+    dutyData,
+    eventData,
+    envData,
+  };
+};
+Mock.mock(`${domain}/about/intro`, 'get', aboutData);

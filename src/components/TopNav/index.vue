@@ -34,12 +34,12 @@
         <el-menu-item index="/AICenter">产业AI中心</el-menu-item>
         <el-menu-item index="/DynamicCondition">数科动态</el-menu-item>
         <el-submenu index="5" popper-class="about" :popper-append-to-body="false">
-          <template slot="title"> <span @click="go2('/about')">关于我们</span></template>
-          <el-menu-item index="5-1">公司介绍</el-menu-item>
-          <el-menu-item index="5-2">社会责任</el-menu-item>
+          <template slot="title"> <span>关于我们</span></template>
+          <el-menu-item index="5-1" @click="go2('/about', 'intro')">公司介绍</el-menu-item>
+          <el-menu-item index="5-2" @click="go2('/about', 'value')">社会责任</el-menu-item>
           <el-menu-item index="5-3">客户案例</el-menu-item>
-          <el-menu-item index="5-4">大事记</el-menu-item>
-          <el-menu-item index="5-5">公司环境</el-menu-item>
+          <el-menu-item index="5-4" @click="go2('/about', 'event')">大事记</el-menu-item>
+          <el-menu-item index="5-5" @click="go2('/about', 'env')">公司环境</el-menu-item>
         </el-submenu>
       </el-menu>
       <a class="top-ad" href=""><img src="@/assets/top-tree.png"></a>
@@ -84,8 +84,8 @@ export default {
       // console.log(key, keyPath);
       this.go2(key);
     },
-    go2(path) {
-      this.$router.push(path);
+    go2(path, query) {
+      this.$router.push({ path, query: { anchor: query } });
     },
     changeProTab(index) {
       this.proNowIndex = index;
