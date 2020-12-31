@@ -1,3 +1,5 @@
+import { Message } from 'element-ui';
+
 const Mock = require('mockjs');
 // 获取mock对象
 const { Random } = Mock; // 获取random对象，随机生成各种数据，具体请翻阅文档
@@ -1386,7 +1388,63 @@ const topIntroData = (req) => {
     newsData,
   };
 };
+// 数科 — 文章
+const dynamicNews = (req) => {
+  const res = JSON.parse(req.body);
+  if (!res.newsId) {
+    // Message.error('错误!未传参!');
+    return false;
+  }
+  const relateData = [];
+  const tagList = [];
+  for (let i = 0; i < 3; i += 1) {
+    relateData.push(Mock.mock({
+      id: '@increment',
+      title: '@ctitle(18, 36)',
+      author: '@cname',
+      pub_time: '@date',
+    }));
+  }
+  for (let i = 0; i < 5; i += 1) {
+    tagList.push(Mock.mock({
+      id: '@increment',
+      tagName: '@ctitle(2, 8)',
+    }));
+  }
+  const dynamicNewsData = {
+    news: {
+      id: Random.increment(),
+      title: Random.ctitle(18, 36),
+      author: Random.cname(),
+      pub_time: Random.date(),
+      detail: Random.cparagraph(20),
+      tag: {
+        list: tagList,
+      },
+      prev: {
+        id: Random.increment(),
+        title: Random.ctitle(18, 36),
+        author: Random.cname(),
+        pub_time: Random.date(),
+      },
+      next: {
+        id: Random.increment(),
+        title: Random.ctitle(18, 36),
+        author: Random.cname(),
+        pub_time: Random.date(),
+      },
+    },
+    relate: {
+      list: relateData,
+    },
+  };
+  return {
+    code,
+    dynamicNewsData,
+  };
+};
 Mock.mock(`${domain}/dynamic/topIntro`, 'get', topIntroData);
+Mock.mock(`${domain}/dynamic/news`, 'post', dynamicNews);
 
 // 关于我们
 const aboutData = (req) => {

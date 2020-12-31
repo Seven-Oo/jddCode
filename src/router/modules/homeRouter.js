@@ -35,7 +35,7 @@ const homeRouter = {
     },
     {
       meta: {
-        title: '产品动态',
+        title: '数科动态',
       },
       path: 'dynamicCondition',
       name: 'DynamicCondition',
@@ -48,6 +48,14 @@ const homeRouter = {
       path: 'about',
       name: 'About',
       component: () => import('@/views/About/index.vue'),
+    },
+    {
+      meta: {
+        title: '文章详情',
+      },
+      path: 'newsDetail',
+      name: 'NewsDetail',
+      component: () => import('@/views/NewsDetail/index.vue'),
     },
   ],
 };

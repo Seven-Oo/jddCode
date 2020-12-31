@@ -10,9 +10,8 @@
             <div class="info-box">
               <span>{{item.author}}</span><span class="timer">{{item.pub_time}}</span>
             </div>
-            <!-- <a :href="item.href"/> -->
-            <!-- <a href="/newsDetail"/> -->
-            <router-link to="/newsDetail"/>
+            <a href="javascript:;"
+               @click="goto('NewsDetail',{newsId: item.id, newsTitle: item.title})"/>
           </li>
         </ul>
       </div>
@@ -30,8 +29,8 @@
               <div class="info-box">
                 <span>{{item.author}}</span><span class="timer">{{item.pub_time}}</span>
               </div>
-              <!-- <a :href="item.href"/> -->
-              <a href="/newsDetail"/>
+              <a href="javascript:;"
+                 @click="goto('NewsDetail',{newsId: item.id, newsTitle: item.title})"/>
             </div>
             <i class="ln2-changjiantou"/>
           </div>
@@ -98,6 +97,11 @@ export default {
     handleCurrentChange(val) {
       // 改变默认的页数
       this.currentPage = val;
+    },
+    goto(name, params) {
+      this.$router.push({
+        name, params,
+      });
     },
   },
 };
