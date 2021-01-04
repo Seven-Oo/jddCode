@@ -57,6 +57,22 @@ const homeRouter = {
       name: 'NewsDetail',
       component: () => import('@/views/NewsDetail/index.vue'),
     },
+    {
+      meta: {
+        title: '客户案例',
+      },
+      path: 'case',
+      name: 'Case',
+      component: () => import('@/views/Case/index.vue'),
+    },
+    {
+      meta: {
+        title: '案例详情页',
+      },
+      path: 'caseDetail',
+      name: 'CaseDetail',
+      component: () => import('@/views/CaseDetail/index.vue'),
+    },
   ],
 };
 

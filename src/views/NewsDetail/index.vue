@@ -10,21 +10,22 @@
           <el-breadcrumb-item>
             <router-link :to="'/dynamicCondition'">数科动态</router-link>
           </el-breadcrumb-item>
-          <el-breadcrumb-item>{{this.$route.params.newsTitle}}</el-breadcrumb-item>
+          <el-breadcrumb-item>{{ this.$route.params.newsTitle }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
     </div>
     <div class="main-wrap flex">
       <div class="news-left">
-        <h2>{{news.title}}</h2>
+        <h2>{{ news.title }}</h2>
         <div class="info-box">
-          <span>{{news.author}}</span><span class="timer">{{news.pub_time}}</span>
+          <span>{{ news.author }}</span
+          ><span class="timer">{{ news.pub_time }}</span>
         </div>
         <div class="detail-box">
-          {{news.detail}}
+          {{ news.detail }}
         </div>
         <div class="tag-box">
-          <span v-for="item in news.tag.list" :key="item.id">{{item.tagName}}</span>
+          <span v-for="item in news.tag.list" :key="item.id">{{ item.tagName }}</span>
         </div>
         <div class="news-page">
           <ul class="flex">
@@ -34,12 +35,16 @@
                   <span>上一篇</span>
                 </div>
                 <ul>
-                  <li @click="goto('NewsDetail',{newsId: item.id, newsTitle: item.title})">
+                  <li
+                    @click="
+                      goto('NewsDetail', { newsId: news.prev.id, newsTitle: news.prev.title })
+                    "
+                  >
                     <div class="relate-item">
-                      <h4 class="ellips2">{{news.prev.title}}</h4>
+                      <h4 class="ellips2">{{ news.prev.title }}</h4>
                       <div class="info-box">
-                        <span>{{news.prev.author}}</span>
-                        <span class="timer">{{news.prev.pub_time}}</span>
+                        <span>{{ news.prev.author }}</span>
+                        <span class="timer">{{ news.prev.pub_time }}</span>
                       </div>
                     </div>
                   </li>
@@ -52,12 +57,19 @@
                   <span>下一篇</span>
                 </div>
                 <ul>
-                  <li @click="goto('NewsDetail',{newsId: item.id, newsTitle: item.title})">
+                  <li>
                     <div class="relate-item">
-                      <h4 class="ellips2">{{news.next.title}}</h4>
+                      <h4
+                        class="ellips2"
+                        @click="
+                          goto('NewsDetail', { newsId: news.next.id, newsTitle: news.next.title })
+                        "
+                      >
+                        {{ news.next.title }}
+                      </h4>
                       <div class="info-box">
-                        <span>{{news.next.author}}</span>
-                        <span class="timer">{{news.next.pub_time}}</span>
+                        <span>{{ news.next.author }}</span>
+                        <span class="timer">{{ news.next.pub_time }}</span>
                       </div>
                     </div>
                   </li>
@@ -74,12 +86,16 @@
               <span>相关阅读</span>
             </div>
             <ul>
-              <li v-for="item in relate.list" :key="item.id"
-                  @click="goto('NewsDetail',{newsId: item.id, newsTitle: item.title})">
+              <li
+                v-for="item in relate.list"
+                :key="item.id"
+                @click="goto('NewsDetail', { newsId: item.id, newsTitle: item.title })"
+              >
                 <div class="relate-item">
-                  <h4 class="ellips2">{{item.title}}</h4>
+                  <h4 class="ellips2">{{ item.title }}</h4>
                   <div class="info-box">
-                    <span>{{item.author}}</span><span class="timer">{{item.pub_time}}</span>
+                    <span>{{ item.author }}</span
+                    ><span class="timer">{{ item.pub_time }}</span>
                   </div>
                 </div>
               </li>
@@ -88,8 +104,8 @@
         </div>
         <div class="news-share">
           <ul class="flex">
-            <li><i class="ln2-weixin"/><span>分享到微信</span></li>
-            <li><i class="ln2-weibo"/><span>分享到微博</span></li>
+            <li><i class="ln2-weixin" /><span>分享到微信</span></li>
+            <li><i class="ln2-weibo" /><span>分享到微博</span></li>
           </ul>
         </div>
       </div>
@@ -100,10 +116,8 @@
 <script>
 export default {
   name: 'NewsDetail',
-  components: {
-  },
-  props: {
-  },
+  components: {},
+  props: {},
   data: () => ({
     news: {},
     relate: {},
@@ -111,14 +125,14 @@ export default {
   computed: {},
   watch: {},
   created() {
-    this.$http.post('/dynamic/news',
-      {
+    this.$http
+      .post('/dynamic/news', {
         newsId: this.$route.params.newsId,
-      }).then((res) => {
-      console.log(res);
-      this.news = res.data.dynamicNewsData.news;
-      this.relate = res.data.dynamicNewsData.relate;
-    });
+      })
+      .then((res) => {
+        this.news = res.data.dynamicNewsData.news;
+        this.relate = res.data.dynamicNewsData.relate;
+      });
   },
   mounted() {},
   beforeCreate() {}, // 生命周期 - 创建之前
@@ -131,7 +145,8 @@ export default {
   methods: {
     goto(name, params) {
       this.$router.push({
-        name, params,
+        name,
+        params,
       });
     },
   },
@@ -139,7 +154,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.newsdetail-main{
+.newsdetail-main {
   position: relative;
   width: 100%;
   margin-top: 70px;
@@ -148,18 +163,18 @@ export default {
     height: 50px;
     line-height: 50px;
     font-size: 14px;
-    background: rgba(199,201,216,.16);
+    background: rgba(199, 201, 216, 0.16);
 
     .el-breadcrumb {
       height: 50px;
       line-height: 50px;
       ::v-deep .el-breadcrumb__inner {
-        color: rgba(0,4,26,.45);
+        color: rgba(0, 4, 26, 0.45);
       }
 
       a {
         font-weight: normal;
-        color: rgba(0,4,26,.45);
+        color: rgba(0, 4, 26, 0.45);
 
         &:hover {
           color: #2c68ff;
@@ -184,7 +199,7 @@ export default {
       margin: 0 0 42px;
       font-size: 14px;
       line-height: 14px;
-      color: rgba(0,4,26,.7);
+      color: rgba(0, 4, 26, 0.7);
 
       span {
         margin-right: 10px;
@@ -193,10 +208,10 @@ export default {
           position: relative;
           padding-left: 10px;
           margin-right: 0;
-          opacity: .5;
+          opacity: 0.5;
 
           &::before {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             top: 0;
@@ -204,15 +219,15 @@ export default {
             width: 1px;
             height: 12px;
             margin: auto 0;
-            background-color:rgba(0,4,26,.7);
-            opacity: .5;
+            background-color: rgba(0, 4, 26, 0.7);
+            opacity: 0.5;
           }
         }
       }
     }
 
     .detail-box {
-      color: rgba(0,4,26,.5);
+      color: rgba(0, 4, 26, 0.5);
     }
 
     .tag-box {
@@ -226,7 +241,7 @@ export default {
         line-height: 26px;
         font-size: 14px;
         color: #2c68ff;
-        background: rgba(44,104,255,.1);
+        background: rgba(44, 104, 255, 0.1);
       }
     }
 
@@ -258,7 +273,7 @@ export default {
 
             &::after {
               position: absolute;
-              content: "";
+              content: '';
               width: 30px;
               height: 2px;
               left: 22px;
@@ -267,7 +282,7 @@ export default {
             }
 
             span {
-              color: rgba(0,4,26,.7);
+              color: rgba(0, 4, 26, 0.7);
               font-size: 14px;
               font-weight: 700;
             }
@@ -280,18 +295,19 @@ export default {
 
           .relate-item {
             h4 {
-              color: rgba(0,4,26,.7);
+              min-height: 48px;
+              color: rgba(0, 4, 26, 0.7);
               font-weight: normal;
               font-size: 16px;
               margin: 0 0 18px;
               line-height: 24px;
-              transition: all .2s ease;
+              transition: all 0.2s ease;
             }
             .info-box {
               margin: 0 0 10px;
               font-size: 12px;
               line-height: 14px;
-              color: rgba(0,4,26,.7);
+              color: rgba(0, 4, 26, 0.7);
 
               span {
                 margin-right: 10px;
@@ -300,10 +316,10 @@ export default {
                   position: relative;
                   padding-left: 10px;
                   margin-right: 0;
-                  opacity: .5;
+                  opacity: 0.5;
 
                   &::before {
-                    content: "";
+                    content: '';
                     position: absolute;
                     left: 0;
                     top: 0;
@@ -311,8 +327,8 @@ export default {
                     width: 1px;
                     height: 12px;
                     margin: auto 0;
-                    background-color:rgba(0,4,26,.7);
-                    opacity: .5;
+                    background-color: rgba(0, 4, 26, 0.7);
+                    opacity: 0.5;
                   }
                 }
               }
@@ -335,7 +351,7 @@ export default {
 
         &::after {
           position: absolute;
-          content: "";
+          content: '';
           width: 30px;
           height: 2px;
           left: 22px;
@@ -344,7 +360,7 @@ export default {
         }
 
         span {
-          color: rgba(0,4,26,.7);
+          color: rgba(0, 4, 26, 0.7);
           font-size: 14px;
         }
       }
@@ -372,20 +388,20 @@ export default {
 
           .relate-item {
             h4 {
-              color: rgba(0,4,26,.7);
+              color: rgba(0, 4, 26, 0.7);
               font-weight: normal;
               font-size: 16px;
               margin: 0 0 18px;
               line-height: 24px;
-              transition: all .2s ease;
+              transition: all 0.2s ease;
             }
             .info-box {
               margin: 0 0 20px;
               padding-bottom: 22px;
               font-size: 12px;
               line-height: 14px;
-              color: rgba(0,4,26,.7);
-              border-bottom: 1px solid rgba(199,201,216,.3);
+              color: rgba(0, 4, 26, 0.7);
+              border-bottom: 1px solid rgba(199, 201, 216, 0.3);
 
               span {
                 margin-right: 10px;
@@ -394,10 +410,10 @@ export default {
                   position: relative;
                   padding-left: 10px;
                   margin-right: 0;
-                  opacity: .5;
+                  opacity: 0.5;
 
                   &::before {
-                    content: "";
+                    content: '';
                     position: absolute;
                     left: 0;
                     top: 0;
@@ -405,8 +421,8 @@ export default {
                     width: 1px;
                     height: 12px;
                     margin: auto 0;
-                    background-color:rgba(0,4,26,.7);
-                    opacity: .5;
+                    background-color: rgba(0, 4, 26, 0.7);
+                    opacity: 0.5;
                   }
                 }
               }
@@ -424,12 +440,12 @@ export default {
         width: 122px;
         height: 50px;
         margin-right: 10px;
-        color: rgba(0,4,26,.7);
+        color: rgba(0, 4, 26, 0.7);
         border: 1px solid #e7e7ec;
         border-radius: 100px;
         cursor: pointer;
         box-sizing: border-box;
-        transition: all .2s ease;
+        transition: all 0.2s ease;
 
         &:last-child {
           margin-right: 0;
@@ -444,12 +460,12 @@ export default {
           font-size: 24px;
           margin: 0 8px 0 10px;
           vertical-align: middle;
-          transition: all .2s ease;
+          transition: all 0.2s ease;
         }
         span {
           font-size: 12px;
           line-height: 48px;
-          transition: all .2s ease;
+          transition: all 0.2s ease;
         }
       }
     }

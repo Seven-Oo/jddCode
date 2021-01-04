@@ -6,16 +6,11 @@
       </div>
       <div class="anchor-tab" ref="anchorTab">
         <div class="main-wrap">
-          <ul class="flex">
-            <li class="active"><a href="javascript:;" @click="goAnchor('#intro')">公司介绍</a></li>
-            <li><a href="javascript:;" @click="goAnchor('#value')">价值观</a></li>
-            <li><a href="javascript:;" @click="goAnchor('#duty')">社会责任</a></li>
-            <li><a href="javascript:;" @click="goAnchor('#event')">数科大事记</a></li>
-            <li><a href="javascript:;" @click="goAnchor('#env')">公司环境</a></li>
-          </ul>
+          <PageTab :pageList="navList"/>
         </div>
       </div>
-      <div class="intro-box" id="intro">
+      <div class="intro-box">
+        <span id="intro" style="margin-top: -60px;"/>
         <div class="main-wrap flex">
           <div class="left-img">
             <img src="@/assets/jdLogo-1.png" alt="">
@@ -71,7 +66,7 @@
                 </div>
                 <div class="duty-intro">
                   <h4>{{item.title}}</h4>
-                  <p>{{item.conts}}</p>
+                  <p class="ellips5">{{item.conts}}</p>
                 </div>
               </div>
             </li>
@@ -79,7 +74,7 @@
               <div class="flex alicenter">
                 <div class="duty-intro">
                   <h4>{{item.title}}</h4>
-                  <p>{{item.conts}}</p>
+                  <p class="ellips5">{{item.conts}}</p>
                 </div>
                 <div class="duty-img">
                   <img :src="item.imgSrc" alt="">
@@ -161,6 +156,33 @@ export default {
   props: {
   },
   data: () => ({
+    navList: [
+      {
+        id: 'intro',
+        title: '公司介绍',
+        anchor: 'intro',
+      },
+      {
+        id: 'value',
+        title: '价值观',
+        anchor: 'value',
+      },
+      {
+        id: 'duty',
+        title: '社会责任',
+        anchor: 'duty',
+      },
+      {
+        id: 'event',
+        title: '数科大事记',
+        anchor: 'event',
+      },
+      {
+        id: 'env',
+        title: '公司环境',
+        anchor: 'env',
+      },
+    ],
     introData: [],
     valueData: [],
     dutyData: [],
@@ -219,10 +241,6 @@ export default {
         tab.style.marginTop = '150px';
       }
     },
-    goAnchor(selector) {
-      const anchor = this.$el.querySelector(selector);
-      document.documentElement.scrollTop = (anchor.offsetTop - 100);
-    },
   },
 };
 </script>
@@ -240,63 +258,6 @@ export default {
 
     .anchor-tab {
       margin-top: 150px;
-
-      ul {
-        padding-top: 18px;
-        height: 52px;
-        border-bottom: 1px solid rgba(0,0,0,.1);
-
-        li {
-          position: relative;
-          height: 52px;
-          line-height: 52px;
-          margin-right: 20px;
-          text-align: center;
-          white-space: nowrap;
-          cursor: pointer;
-          width: 120px;
-
-          &::after {
-            content: "";
-            opacity: 0;
-            position: absolute;
-            left: 0;
-            bottom: -1px;
-            right: 0;
-            width: 100%;
-            margin: 0 auto;
-            height: 2px;
-            background: #2c68ff;
-            transform-origin: center center;
-            transform: scale(0);
-            transition: all .2s ease;
-          }
-
-          &:hover {
-            a {
-              color: #2c68ff;
-              font-size: 16px;
-            }
-          }
-
-          a {
-            color: #00041a;
-            font-size: 14px;
-            transition: all .2s ease;
-          }
-        }
-        li.active {
-          a {
-            color: #2c68ff;
-            font-size: 16px;
-          }
-
-          &::after {
-            transform: scale(1);
-            opacity: 1;
-          }
-        }
-      }
     }
 
     .intro-box {
@@ -420,6 +381,7 @@ export default {
         padding: 0 0 30px;
 
         h2 {
+          position: relative;
           font-size: 36px;
           line-height: 50px;
           font-weight: 500;
@@ -499,6 +461,28 @@ export default {
             height: 300px;
             padding: 60px 25px 0;
             box-sizing: border-box;
+
+            h4 {
+              position: relative;
+              font-size: 18px;
+              font-weight: normal;
+              padding-bottom: 14px;
+              margin-bottom: 20px;
+              line-height: 26px;
+
+              &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 40px;
+                height: 2px;
+                background: #2c68ff;
+              }
+            }
+            p {
+              font-size: 14px;
+            }
           }
         }
       }

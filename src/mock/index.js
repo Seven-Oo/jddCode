@@ -1788,3 +1788,135 @@ const aboutData = (req) => {
   };
 };
 Mock.mock(`${domain}/about/intro`, 'get', aboutData);
+
+const clientCase = (req) => {
+  const caseShowImg = [
+    {
+      id: 1,
+      src: require('@/assets/case-pc-ico_1.png'),
+    },
+    {
+      id: 2,
+      src: require('@/assets/case-pc-ico_2.png'),
+    },
+    {
+      id: 3,
+      src: require('@/assets/case-pc-ico_3.png'),
+    },
+    {
+      id: 4,
+      src: require('@/assets/case-pc-ico_1.png'),
+    },
+    {
+      id: 5,
+      src: require('@/assets/case-pc-ico_2.png'),
+    },
+  ];
+  const caseShowData = [];
+  const listData = [];
+  for (let i = 0; i < 6; i += 1) {
+    caseShowData.push(Mock.mock({
+      id: '@increment',
+      title: '@ctitle(4, 8)',
+      amount: '@natural(40, 1500)',
+    }));
+  }
+  for (let i = 0; i < 26; i += 1) {
+    listData.push(Mock.mock({
+      id: '@increment',
+      src: '@image()',
+      title: '@ctitle(4, 8)',
+      conts: '@cparagraph(20)',
+      moreTxt: '了解详情',
+    }));
+  }
+
+  const finalyData = {
+    imgData: {
+      id: 'case_imgData',
+      title: '与合作伙伴一起，共创数字经济增长新方式',
+      caseShowImg,
+      caseShowData,
+    },
+    listData,
+  };
+  return {
+    code,
+    finalyData,
+  };
+};
+Mock.mock(`${domain}/clientCase`, 'get', clientCase);
+
+const caseDetails = (req) => {
+  const res = JSON.parse(req.body);
+  // if (!res.caseId) {
+  //   // Message.error('错误!未传参!');
+  //   return false;
+  // }
+  const caseDetailsData = {
+    // bg: require('@/assets/case_detail_bg.png'),
+    bg: require('@/assets/case_detail_bg_2.jpg'),
+    title: Random.ctitle(10, 16),
+    briefs: Random.csentence(30, 52),
+    navList: [
+      {
+        id: Random.increment(),
+        title: Random.ctitle(4),
+        detail: Random.cparagraph(20),
+        anchor: 'tab1',
+      },
+      {
+        id: Random.increment(),
+        title: Random.ctitle(4),
+        detail: Random.cparagraph(20),
+        anchor: 'tab2',
+      },
+      {
+        id: Random.increment(),
+        title: Random.ctitle(5),
+        detail: Random.cparagraph(20),
+        anchor: 'tab3',
+      },
+      {
+        id: Random.increment(),
+        title: Random.ctitle(7),
+        anchor: 'tab4',
+        product: [
+          {
+            id: 'case-pro-1',
+            src: require('@/assets/case-pro_1.png'),
+            title: Random.ctitle(7, 16),
+            conts: Random.csentence(26, 52),
+            isArrow: true,
+          },
+          {
+            id: 'case-pro-2',
+            src: require('@/assets/case-pro_2.jpg'),
+            title: Random.ctitle(7, 16),
+            conts: Random.csentence(26, 52),
+            isArrow: false,
+          },
+          {
+            id: 'case-pro-3',
+            src: require('@/assets/case-pro_1.png'),
+            title: Random.ctitle(7, 16),
+            conts: Random.csentence(26, 52),
+            isArrow: true,
+          },
+          {
+            id: 'case-pro-4',
+            src: require('@/assets/case-pro_2.jpg'),
+            title: Random.ctitle(7, 16),
+            conts: Random.csentence(26, 52),
+            isArrow: false,
+          },
+        ],
+      },
+    ],
+  };
+  return {
+    code,
+    caseDetailsData,
+  };
+};
+Mock.mock(`${domain}/caseNews`, 'post', caseDetails);

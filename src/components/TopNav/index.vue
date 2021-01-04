@@ -37,7 +37,7 @@
           <template slot="title"> <span>关于我们</span></template>
           <el-menu-item index="5-1" @click="go2('/about', 'intro')">公司介绍</el-menu-item>
           <el-menu-item index="5-2" @click="go2('/about', 'value')">社会责任</el-menu-item>
-          <el-menu-item index="5-3">客户案例</el-menu-item>
+          <el-menu-item index="5-3" @click="go2('/case')">客户案例</el-menu-item>
           <el-menu-item index="5-4" @click="go2('/about', 'event')">大事记</el-menu-item>
           <el-menu-item index="5-5" @click="go2('/about', 'env')">公司环境</el-menu-item>
         </el-submenu>
