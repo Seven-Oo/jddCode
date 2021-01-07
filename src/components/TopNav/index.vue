@@ -10,7 +10,8 @@
       >
         <el-submenu index="1" popper-class="production" :popper-append-to-body="false">
           <template slot="title">
-            <span @click="go2('/productCenter')">产品中心</span>
+            <span>产品中心</span>
+            <!-- @click="go2('/productCenter')" -->
           </template>
           <div class="production-menu">
             <div class="left">
@@ -26,7 +27,8 @@
           </div>
         </el-submenu>
         <el-submenu index="2" popper-class="solution" :popper-append-to-body="false">
-          <template slot="title"> <span @click="go2('/solution')">解决方案</span></template>
+          <template slot="title"> <span>解决方案</span></template>
+          <!-- @click="go2('/solution')" -->
           <div class="solution-menu">
             <Submenu :menudata="solutionMenu" />
           </div>

@@ -6,7 +6,9 @@
           :class="{active: index==nowIndex}"
           @click="changeTab(index)">
         <a href="javascript:;"
-           @click="goAnchor(`#${item.anchor}`)">{{item.title}}</a>
+           :data-id="`#${item.anchor}`"
+        >{{item.title}}</a>
+        <!-- @click="goAnchor(`#${item.anchor}`)" -->
       </li>
     </ul>
   </div>
@@ -40,11 +42,11 @@ export default {
     changeTab(index) {
       this.nowIndex = index;
     },
-    goAnchor(selector) {
-      const anchor = document.querySelector(selector);
-      // document.documentElement.scrollTop = (anchor.offsetTop - 100);
-      document.documentElement.scrollTop = (anchor.offsetTop);
-    },
+    // goAnchor(selector) {
+    //   const anchor = document.querySelector(selector);
+    //   document.documentElement.scrollTop = (anchor.offsetTop - 140);
+    //   // document.documentElement.scrollTop = (anchor.offsetTop);
+    // },
   },
 };
 </script>

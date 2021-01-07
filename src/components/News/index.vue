@@ -1,5 +1,5 @@
 <template>
-  <div class="news-main" ref="newsMain">
+  <div class="news-main" ref="newsMain" :style="{backgroundPosition: `center -${scrollNum}px`}">
     <canvas id="canvas" height="600"/>
     <div class="main-wrap">
       <template v-for="item in newsData">
@@ -33,7 +33,7 @@
           </li>
         </ul>
       </template>
-      <div class="slogan-box">
+      <div class="slogan-box" :style="{transform: `translate(-50%, -${transLateNum}px)`}">
         <img src="@/assets/index_news_slogan.svg" alt="">
         <a href="#">{{sloganTxt}}</a>
       </div>
@@ -57,6 +57,8 @@ export default {
   data: () => ({
     sloganTxt: '获取方案',
     stars: [],
+    scrollNum: 0,
+    transLateNum: 0,
   }),
   computed: {},
   watch: {},
@@ -79,11 +81,14 @@ export default {
     handleScroll() {
       const scrollTop = window.pageYOffset
       || document.documentElement.scrollTop || document.body.scrollTop;
-      const newslTop = this.$refs.newsMain.offsetTop;
-
-      // console.log(scrollTop, newslTop);
-      if (scrollTop > newslTop) {
-        // this.$refs.newsMain.style.backgroundPosition = 'center -270px';
+      console.log(scrollTop);
+      if (scrollTop >= 2800 && this.scrollNum < 270) {
+        this.scrollNum = scrollTop - 3000 > 270 ? 270 : scrollTop - 3000;
+      } else if (scrollTop >= 3000) {
+        this.transLateNum = scrollTop - 3000 > 90 ? 90 : scrollTop - 3000;
+      } else if (scrollTop < 2800) {
+        this.scrollNum = 0;
+        this.transLateNum = 0;
       }
     },
   },
@@ -93,7 +98,8 @@ export default {
 <style lang="less" scoped>
 .news-main{
   background: #010103 url('../../assets/trend_bg.jpg') no-repeat 0 0;
-  background-position: center -270px;
+  // background-position: center -270px;
+  transition: all 0.2s ease;
 
   #canvas {
     position: absolute;
@@ -264,7 +270,8 @@ export default {
       left: 50%;
       bottom: 0;
       height: 34px;
-      transform: translate(-50%, -90px);
+      // transform: translate(-50%, -90px);
+      transition: all 0.2s ease;
 
       a {
         background: linear-gradient(90deg,#3693ff,#195aff);

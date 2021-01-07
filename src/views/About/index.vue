@@ -4,109 +4,112 @@
       <div class="top-logo">
         <div class="main-wrap"><img src="@/assets/about_title.svg" alt=""></div>
       </div>
-      <div class="anchor-tab" ref="anchorTab">
-        <div class="main-wrap">
-          <PageTab :pageList="navList"/>
+    </div>
+    <div class="anchor-tab" ref="anchorTab">
+      <div class="main-wrap">
+        <PageTab :pageList="navList"/>
+      </div>
+    </div>
+    <div class="intro-box">
+      <span id="intro" style="margin-top: -60px;"/>
+      <div class="main-wrap flex">
+        <div class="left-img">
+          <img src="@/assets/jdLogo-1.png" alt="">
+          <div class="img-div"/>
+        </div>
+        <div class="right-intro">
+          <h2>{{introData.title}}</h2>
+          <div class="desc-box">
+            <el-scrollbar style="height:100%">
+              <p v-for="item in introData.introList" :key="item.id">{{item.conts}}</p>
+            </el-scrollbar>
+          </div>
         </div>
       </div>
-      <div class="intro-box">
-        <span id="intro" style="margin-top: -60px;"/>
-        <div class="main-wrap flex">
-          <div class="left-img">
-            <img src="@/assets/jdLogo-1.png" alt="">
-            <div class="img-div"/>
-          </div>
-          <div class="right-intro">
-            <h2>{{introData.title}}</h2>
-            <div class="desc-box">
-              <el-scrollbar style="height:100%">
-                <p v-for="item in introData.introList" :key="item.id">{{item.conts}}</p>
-              </el-scrollbar>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="value-box" id="value">
-        <div class="main-wrap">
-          <h2>{{valueData.title}}</h2>
-          <p>{{valueData.desc}}</p>
-          <ul>
-            <li v-for="item in valueData.valueList" :key="item.id">
-              <div class="flex alicenter">
-                <div class="icon-box">
-                  <img :src="item.iconSrc" alt="">
-                </div>
-                <div class="cont-box">
-                  <h4>{{item.title}}</h4>
-                  <p>{{item.conts}}</p>
-                </div>
+    </div>
+    <div class="value-box" id="value">
+      <div class="main-wrap">
+        <h2>{{valueData.title}}</h2>
+        <p>{{valueData.desc}}</p>
+        <ul>
+          <li v-for="item in valueData.valueList" :key="item.id">
+            <div class="flex alicenter">
+              <div class="icon-box">
+                <img :src="item.iconSrc" alt="">
               </div>
-            </li>
+              <div class="cont-box">
+                <h4>{{item.title}}</h4>
+                <p>{{item.conts}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="duty-box" id="duty">
+      <div class="main-wrap">
+        <div class="duty-title">
+          <h2>{{dutyData.title}}</h2>
+          <div class="btn">
+            <button>
+              <a :href="dutyData.rightHref">
+                <span>{{ dutyData.rightTxt }}</span>
+                <i class="ln2-arrow_right" />
+              </a>
+            </button>
+          </div>
+        </div>
+        <ul class="duty-conts">
+          <li v-for="item in dutyData.dutyList1" :key="item.id">
+            <div class="flex alicenter">
+              <div class="duty-img">
+                <img :src="item.imgSrc" alt="">
+              </div>
+              <div class="duty-intro">
+                <h4>{{item.title}}</h4>
+                <p class="ellips5">{{item.conts}}</p>
+              </div>
+            </div>
+          </li>
+          <li v-for="item in dutyData.dutyList2" :key="item.id">
+            <div class="flex alicenter">
+              <div class="duty-intro">
+                <h4>{{item.title}}</h4>
+                <p class="ellips5">{{item.conts}}</p>
+              </div>
+              <div class="duty-img">
+                <img :src="item.imgSrc" alt="">
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="event-box" id="event">
+      <div class="main-wrap">
+        <h2>{{eventData.title}}</h2>
+      </div>
+      <div class="timeLine">
+        <div class="ul_box">
+          <ul class="my_timeline">
+            <div class="main-wrap flex alicenter">
+              <li class="my_timeline_item" v-for="(item,index) in eventList"
+                  :key="item.id"
+                  :class="{active: index == timeIndex}"  @click="changeActive(index)">
+                <!--圈圈节点-->
+                <div class="my_timeline_node"/>
+                <!--标注-->
+                <div class="my_timeline_item_content">
+                  {{item.timestamp}}
+                </div>
+              </li>
+            </div>
           </ul>
         </div>
-      </div>
-      <div class="duty-box" id="duty">
-        <div class="main-wrap">
-          <div class="duty-title">
-            <h2>{{dutyData.title}}</h2>
-            <div class="btn">
-              <button>
-                <a :href="dutyData.rightHref">
-                  <span>{{ dutyData.rightTxt }}</span>
-                  <i class="ln2-arrow_right" />
-                </a>
-              </button>
-            </div>
-          </div>
-          <ul class="duty-conts">
-            <li v-for="item in dutyData.dutyList1" :key="item.id">
-              <div class="flex alicenter">
-                <div class="duty-img">
-                  <img :src="item.imgSrc" alt="">
-                </div>
-                <div class="duty-intro">
-                  <h4>{{item.title}}</h4>
-                  <p class="ellips5">{{item.conts}}</p>
-                </div>
-              </div>
-            </li>
-            <li v-for="item in dutyData.dutyList2" :key="item.id">
-              <div class="flex alicenter">
-                <div class="duty-intro">
-                  <h4>{{item.title}}</h4>
-                  <p class="ellips5">{{item.conts}}</p>
-                </div>
-                <div class="duty-img">
-                  <img :src="item.imgSrc" alt="">
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="event-box" id="event">
-        <div class="main-wrap">
-          <h2>{{eventData.title}}</h2>
-        </div>
-        <div class="timeLine">
-          <div class="ul_box">
-            <ul class="my_timeline">
-              <div class="main-wrap flex alicenter">
-                <li class="my_timeline_item" v-for="(item,index) in eventList"
-                    :key="item.id"
-                    :class="{active: index == timeIndex}"  @click="changeActive(index)">
-                  <!--圈圈节点-->
-                  <div class="my_timeline_node"/>
-                  <!--标注-->
-                  <div class="my_timeline_item_content">
-                    {{item.timestamp}}
-                  </div>
-                </li>
-              </div>
-            </ul>
-          </div>
-          <template v-if="eventList[timeIndex]">
-            <div class="main-wrap contView-box">
+        <template v-if="eventList[timeIndex]">
+          <div class="main-wrap contView-box">
+            <div class="eventScrollBox" ref="eventScrollBox"
+                 style="transform: translate(0px, 0px);">
               <div class="content" v-for="item in eventList[timeIndex].children" :key="item.id">
                 <h4 class="tit">{{item.title}}</h4>
                 <ul class="cont-ul">
@@ -116,35 +119,36 @@
                 </ul>
               </div>
             </div>
-          </template>
-          <div class="main-wrap">
-            <ul class="contView-ul">
-              <li><i class="ln2-up"/></li>
-              <li><i class="ln2-down"/></li>
-            </ul>
           </div>
-        </div>
-
-      </div>
-      <div class="env-box" id="env">
+        </template>
         <div class="main-wrap">
-          <h2 class="env-title">{{envData.title}}</h2>
-          <ul>
-            <li  v-for="item in envData.envList" :key="item.id">
-              <div>
-                <div class="env-img">
-                  <img :src="item.imgSrc" alt="">
-                </div>
-                <div class="env-intro">
-                  <h4>{{item.title}}</h4>
-                  <p>{{item.conts}}</p>
-                </div>
-              </div>
-            </li>
+          <ul class="contView-ul">
+            <li><i @click="eventUlDown(timeIndex)" class="ln2-up"/></li>
+            <li><i @click="eventUlUp(timeIndex)" class="ln2-down"/></li>
           </ul>
         </div>
       </div>
+
     </div>
+    <div class="env-box" id="env">
+      <div class="main-wrap">
+        <h2 class="env-title">{{envData.title}}</h2>
+        <ul>
+          <li  v-for="item in envData.envList" :key="item.id">
+            <div>
+              <div class="env-img">
+                <img :src="item.imgSrc" alt="">
+              </div>
+              <div class="env-intro">
+                <h4>{{item.title}}</h4>
+                <p>{{item.conts}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -190,6 +194,7 @@ export default {
     envData: [],
     eventList: [],
     timeIndex: 0,
+    eventTransY: 0,
   }),
   computed: {},
   watch: {},
@@ -204,7 +209,7 @@ export default {
     });
   },
   mounted() {
-    window.addEventListener('scroll', this.tabScroll, true);
+    // window.addEventListener('scroll', this.tabScroll, true);
   },
   beforeCreate() {}, // 生命周期 - 创建之前
   beforeMount() {}, // 生命周期 - 挂载之前
@@ -212,35 +217,46 @@ export default {
   updated() {}, // 生命周期 - 更新之后
   beforeDestroy() {}, // 生命周期 - 销毁之前
   destroyed() {
-    window.removeEventListener('scroll', this.tabScroll);
+    // window.removeEventListener('scroll', this.tabScroll);
   }, // 生命周期 - 销毁完成
   activated() {},
   methods: {
     changeActive(index) {
       this.timeIndex = index;
     },
-    tabScroll() {
-      const scrollTop = window.pageYOffset
-      || document.documentElement.scrollTop || document.body.scrollTop;
-      const tab = this.$refs.anchorTab;
-
-      if (scrollTop >= tab.offsetTop) {
-        document.querySelector('.topnav-main').style.boxShadow = 'none';
-
-        tab.style.backgroundColor = '#fff';
-        tab.style.boxShadow = '0 2px 15px 0 rgba(0,72,174,.15)';
-        tab.style.position = 'fixed';
-        tab.style.top = '70px';
-        tab.style.zIndex = '2';
-        tab.style.width = '100%';
-        tab.style.marginTop = '0';
-      } else {
-        tab.style.backgroundColor = 'transparent';
-        tab.style.boxShadow = 'none';
-        tab.style.position = '';
-        tab.style.marginTop = '150px';
+    eventUlDown(index) {
+      this.eventTransY += 202;
+      const allHeight = (this.$refs.eventScrollBox.children.length - 3) * 202;
+      if (this.eventTransY <= allHeight) {
+        this.$refs.eventScrollBox.style.transform = `translate(0px, -${this.eventTransY}px)`;
       }
     },
+    eventUlUp(index) {
+      this.eventTransY -= 202;
+      this.$refs.eventScrollBox.style.transform = `translate(0px, -${this.eventTransY}px)`;
+    },
+    // tabScroll() {
+    //   const scrollTop = window.pageYOffset
+    //   || document.documentElement.scrollTop || document.body.scrollTop;
+    //   const tab = this.$refs.anchorTab;
+
+    //   if (scrollTop >= tab.offsetTop) {
+    //     document.querySelector('.topnav-main').style.boxShadow = 'none';
+
+    //     tab.style.backgroundColor = '#fff';
+    //     tab.style.boxShadow = '0 2px 15px 0 rgba(0,72,174,.15)';
+    //     tab.style.position = 'fixed';
+    //     tab.style.top = '70px';
+    //     tab.style.zIndex = '2';
+    //     tab.style.width = '100%';
+    //     tab.style.marginTop = '0';
+    //   } else {
+    //     tab.style.backgroundColor = 'transparent';
+    //     tab.style.boxShadow = 'none';
+    //     tab.style.position = '';
+    //     tab.style.marginTop = '-250px';
+    //   }
+    // },
   },
 };
 </script>
@@ -249,19 +265,24 @@ export default {
 .about-main{
   position: relative;
   width: 100%;
-  margin-top: 70px;
 
   .about-bg {
-    margin-top: -70px;
+    position: relative;
+    width: 100%;
     background: url('../../assets/about_bg_a.png') no-repeat;
     padding-top: 230px;
-
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: 1920px 700px;
+    background-position: top;
+    height: 700px;
+  }
     .anchor-tab {
-      margin-top: 150px;
+      margin-top: -250px;
     }
 
     .intro-box {
-      margin: 80px 0 40px 0;
+      padding-top: 50px;
 
       .left-img {
         width: 600px;
@@ -316,7 +337,7 @@ export default {
     }
 
     .value-box {
-      margin-bottom: 37px;
+      padding-top: 50px;
 
       h2 {
         font-size: 36px;
@@ -374,7 +395,7 @@ export default {
     }
 
     .duty-box {
-      margin-bottom: 30px;
+      padding-top: 50px;
 
       .duty-title {
         position: relative;
@@ -491,7 +512,6 @@ export default {
     .event-box {
       background: url('../../assets/about_event_bg.png') no-repeat;
       padding: 50px 0;
-      margin: 0 0 50px 0;
 
       h2 {
           font-size: 36px;
@@ -615,8 +635,13 @@ export default {
         .contView-box {
           height: 574px;
           overflow: hidden;
+
+          .eventScrollBox {
+            transition: all .1s ease;
+          }
         }
         .contView-ul {
+          margin-top: 30px;
           li {
             display: inline-block;
             width: 40px;
@@ -640,6 +665,8 @@ export default {
     }
 
     .env-box {
+      padding-top: 50px;
+
       h2 {
         font-size: 36px;
         line-height: 50px;
@@ -692,6 +719,6 @@ export default {
         }
       }
     }
-  }
+
 }
 </style>

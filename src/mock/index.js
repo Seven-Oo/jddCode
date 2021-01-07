@@ -1570,6 +1570,28 @@ const aboutData = (req) => {
         ],
       },
       {
+        id: '2012-7-11',
+        title: '2012年7月大事记',
+        infoList: [
+          {
+            id: '2012-7-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+        ],
+      },
+      {
+        id: '2012-9-1',
+        title: '2012年9月大事记',
+        infoList: [
+          {
+            id: '2012-9-info1',
+            info: `我们在行业内首次提出金融科技定位，致力于为金融机构提供科技服务，
+          推动中国互联网金融行业整体向金融科技升级。`,
+          },
+        ],
+      },
+      {
         id: '2012-10-1',
         title: '2012年10月大事记',
         infoList: [
@@ -1920,3 +1942,343 @@ const caseDetails = (req) => {
   };
 };
 Mock.mock(`${domain}/caseNews`, 'post', caseDetails);
+
+// ai
+const aiCenter = (req) => {
+  const aiCore = {
+    title: 'AI核心技术',
+    tab: {
+      list: [
+        {
+          id: 'machineStudy',
+          tabValue: '机器学习',
+          list: [
+            {
+              id: 'machine_1',
+              icon: require('@/assets/ai_core_1_1.png'),
+              title: '人机识别',
+              title_en: 'Machine recognition',
+              brief: `<p>在反消费信贷套现欺诈过程中，利用生物探针采集的移动端界面传感器数据，进行人机识别。
+              通过获取数据并观察其统计特征及分布，结合业务规则和数据的分布建立深度学习模型。</p>
+              <p>测试集双指标95%以上的前提下，在保证验证集（抽取实际样本验证）机器数据召回率 72%，
+              人的数据误识率1%的情况下，能够基本稳定的拦截线上数据的日均千分之五（记录数）。</p>`,
+            },
+            {
+              id: 'machine_2',
+              icon: require('@/assets/ai_core_1_2.png'),
+              title: '图神经网络',
+              title_en: 'Figure neural network',
+              brief: `<p>知识网络通常表示为异构图，其中不同的关系由不同类型的边表示。图神经网络可以浓缩图中的节点信息，
+              生成节点嵌入，作为机器学习模型的输入。</p>
+              <p>在营销反欺诈任务中，利用用户间多种关系（注册表/绑卡/实名认证等）生成异构图，达到甚至超越有监督学习模型的性能。</p>`,
+            },
+            {
+              id: 'machine_3',
+              icon: require('@/assets/ai_core_1_3.png'),
+              title: '深度学习',
+              title_en: 'Deep learning',
+              brief: `<p>这项创新深度学习优化算法，从根本上解决了深度学习算法的计算速度瓶颈问题，提出了新颖的深度学习分布式优化理论和算法
+              ——特征回放算法（Features Replay），通过实验验证了无性能损失的前提下，特征回放算法比传统反向传播算法（Back Propagation）在速率上节省至少34.4%，
+              应用该技术成果将加速深度学习模型的训练计算，提升效能。</p>`,
+            },
+            {
+              id: 'machine_4',
+              icon: require('@/assets/ai_core_1_4.png'),
+              title: '联邦学习',
+              title_en: 'Federal learning',
+              brief: `<p>目前，所有联邦学习都是同步的。因为不同服务器的计算能力、计算速度有差别，所以同步的联邦学习不能解决多方的联合建模问题，进而需要异步计算。</p>
+              <p>将联邦学习技术应用于风控联合建模，解决隐私数据安全共享问题，改变数据孤岛条件下无法实现的业务效果。
+              目前已经整合区块链、容器技术、联邦学习构建行业级的联合建模解决方案。</p>`,
+            },
+          ],
+        },
+        {
+          id: 'computerVision',
+          tabValue: '计算机视觉',
+          list: [
+            {
+              id: 'vision_1',
+              icon: require('@/assets/ai_core_2_1.png'),
+              title: '人脸识别',
+              title_en: 'Face recognition',
+              brief: `<p>在反消费信贷套现欺诈过程中，利用生物探针采集的移动端界面传感器数据，进行人机识别。
+              通过获取数据并观察其统计特征及分布，结合业务规则和数据的分布建立深度学习模型。</p>
+              <p>测试集双指标95%以上的前提下，在保证验证集（抽取实际样本验证）机器数据召回率 72%，
+              人的数据误识率1%的情况下，能够基本稳定的拦截线上数据的日均千分之五（记录数）。</p>`,
+            },
+            {
+              id: 'vision_2',
+              icon: require('@/assets/ai_core_2_2.png'),
+              title: '人脸防伪',
+              title_en: 'Face anti-counterfeiting',
+              brief: `<p>知识网络通常表示为异构图，其中不同的关系由不同类型的边表示。图神经网络可以浓缩图中的节点信息，
+              生成节点嵌入，作为机器学习模型的输入。</p>
+              <p>在营销反欺诈任务中，利用用户间多种关系（注册表/绑卡/实名认证等）生成异构图，达到甚至超越有监督学习模型的性能。</p>`,
+            },
+            {
+              id: 'vision_3',
+              icon: require('@/assets/ai_core_2_1.png'),
+              title: '文字识别',
+              title_en: 'OCR',
+              brief: `<p>这项创新深度学习优化算法，从根本上解决了深度学习算法的计算速度瓶颈问题，提出了新颖的深度学习分布式优化理论和算法
+              ——特征回放算法（Features Replay），通过实验验证了无性能损失的前提下，特征回放算法比传统反向传播算法（Back Propagation）在速率上节省至少34.4%，
+              应用该技术成果将加速深度学习模型的训练计算，提升效能。</p>`,
+            },
+          ],
+        },
+        {
+          id: 'voiceStudy',
+          tabValue: '语音学习',
+          list: [
+            {
+              id: 'voice_1',
+              icon: require('@/assets/ai_core_3_1.png'),
+              title: '语音合成',
+              title_en: 'Speech synthesis',
+              brief: `<p>在反消费信贷套现欺诈过程中，利用生物探针采集的移动端界面传感器数据，进行人机识别。
+              通过获取数据并观察其统计特征及分布，结合业务规则和数据的分布建立深度学习模型。</p>
+              <p>测试集双指标95%以上的前提下，在保证验证集（抽取实际样本验证）机器数据召回率 72%，
+              人的数据误识率1%的情况下，能够基本稳定的拦截线上数据的日均千分之五（记录数）。</p>`,
+            },
+            {
+              id: 'voice_2',
+              icon: require('@/assets/ai_core_3_2.png'),
+              title: '文本合成',
+              title_en: 'Text synthesis',
+              brief: `<p>知识网络通常表示为异构图，其中不同的关系由不同类型的边表示。图神经网络可以浓缩图中的节点信息，
+              生成节点嵌入，作为机器学习模型的输入。</p>
+              <p>在营销反欺诈任务中，利用用户间多种关系（注册表/绑卡/实名认证等）生成异构图，达到甚至超越有监督学习模型的性能。</p>`,
+            },
+            {
+              id: 'voice_3',
+              icon: require('@/assets/ai_core_3_3.png'),
+              title: '语音识别',
+              title_en: 'Speech recognition',
+              brief: `<p>这项创新深度学习优化算法，从根本上解决了深度学习算法的计算速度瓶颈问题，提出了新颖的深度学习分布式优化理论和算法
+              ——特征回放算法（Features Replay），通过实验验证了无性能损失的前提下，特征回放算法比传统反向传播算法（Back Propagation）在速率上节省至少34.4%，
+              应用该技术成果将加速深度学习模型的训练计算，提升效能。</p>`,
+            },
+            {
+              id: 'voice_4',
+              icon: require('@/assets/ai_core_3_4.png'),
+              title: '知识图谱',
+              title_en: 'Knowledge graph',
+              brief: `<p>目前，所有联邦学习都是同步的。因为不同服务器的计算能力、计算速度有差别，所以同步的联邦学习不能解决多方的联合建模问题，进而需要异步计算。</p>
+              <p>将联邦学习技术应用于风控联合建模，解决隐私数据安全共享问题，改变数据孤岛条件下无法实现的业务效果。
+              目前已经整合区块链、容器技术、联邦学习构建行业级的联合建模解决方案。</p>`,
+            },
+          ],
+        },
+      ],
+      rightTxt: '查看更多',
+    },
+  };
+  const aiIndustry = Mock.mock({
+    title: 'AI产业应用',
+    tab: {
+      list: [
+        {
+          id: Random.increment(),
+          tabValue: 'AI机器人',
+          'list|1-8': [
+            {
+              id: Random.increment(),
+              src: require('@/assets/ai_indu_img_1_1.png'),
+              title: Random.ctitle(7, 16),
+              conts: Random.csentence(26, 52),
+              isArrow: false,
+            },
+          ],
+        },
+        {
+          id: Random.increment(),
+          tabValue: '金融科技',
+          'list|1-8': [
+            {
+              id: Random.increment(),
+              src: require('@/assets/ai_indu_img_1_2.png'),
+              title: Random.ctitle(7, 16),
+              conts: Random.csentence(26, 52),
+              isArrow: false,
+            },
+          ],
+        },
+        {
+          id: Random.increment(),
+          tabValue: '智能城市',
+          'list|1-8': [
+            {
+              id: Random.increment(),
+              src: require('@/assets/ai_indu_img_1_3.png'),
+              title: Random.ctitle(7, 16),
+              conts: Random.csentence(26, 52),
+              isArrow: false,
+            },
+          ],
+        },
+        {
+          id: Random.increment(),
+          tabValue: '农业',
+          'list|1-8': [
+            {
+              id: Random.increment(),
+              src: require('@/assets/ai_indu_img_1_1.png'),
+              title: Random.ctitle(7, 16),
+              conts: Random.csentence(26, 52),
+              isArrow: false,
+            },
+          ],
+        },
+      ],
+    },
+  });
+  const aiPaper = Mock.mock({
+    title: '科技论文',
+    topData: [
+      {
+        id: Random.guid(),
+        title: 'AI实验室',
+        bg: require('@/assets/ai_paper_bg_1.png'),
+        'list|1-8': [
+          {
+            id: Random.increment(),
+            title: Random.title(),
+          },
+        ],
+      },
+      {
+        id: Random.guid(),
+        title: '京东智能城市研究院',
+        bg: require('@/assets/ai_paper_bg_2.png'),
+        'list|1-8': [
+          {
+            id: Random.increment(),
+            title: Random.title(),
+          },
+        ],
+      },
+      {
+        id: Random.guid(),
+        title: '据智能实验室',
+        bg: require('@/assets/ai_paper_bg_3.png'),
+        'list|1-8': [
+          {
+            id: Random.increment(),
+            title: Random.title(),
+          },
+        ],
+      },
+    ],
+    bottomData: {
+      id: 'paper_bottom',
+      title: Random.ctitle(6, 19),
+      list: [
+        {
+          id: 'paper_b_1',
+          title: Random.ctitle(),
+          conts: Random.csentence(26, 52),
+        },
+        {
+          id: 'paper_b_2',
+          title: Random.ctitle(),
+          conts: Random.csentence(26, 52),
+        },
+        {
+          id: 'paper_b_3',
+          title: Random.ctitle(),
+          conts: Random.csentence(26, 52),
+        },
+        {
+          id: 'paper_b_4',
+          title: Random.ctitle(),
+          conts: Random.csentence(26, 52),
+        },
+        {
+          id: 'paper_b_5',
+          title: Random.ctitle(),
+          conts: Random.csentence(26, 52),
+        },
+      ],
+    },
+  });
+  const aiLab = Mock.mock({
+    title: '科技研发机构',
+    list: [
+      {
+        id: 'lab_1',
+        icon: require('@/assets/ai_lab_icon_1.png'),
+        hoverIcon: require('@/assets/ai_lab_icon_1_f.png'),
+        title: '数据智能实验室',
+        brief: Random.csentence(26, 89),
+      },
+      {
+        id: 'lab_2',
+        icon: require('@/assets/ai_lab_icon_2.png'),
+        hoverIcon: require('@/assets/ai_lab_icon_2_f.png'),
+        title: '智能风控实验室',
+        brief: Random.csentence(26, 89),
+      },
+      {
+        id: 'lab_3',
+        icon: require('@/assets/ai_lab_icon_3.png'),
+        hoverIcon: require('@/assets/ai_lab_icon_3_f.png'),
+        title: '区块链实验室',
+        brief: Random.csentence(26, 89),
+      },
+      {
+        id: 'lab_4',
+        icon: require('@/assets/ai_lab_icon_4.png'),
+        hoverIcon: require('@/assets/ai_lab_icon_4_f.png'),
+        title: '数字农牧院士研究院',
+        brief: Random.csentence(26, 89),
+      },
+      {
+        id: 'lab_5',
+        icon: require('@/assets/ai_lab_icon_5.png'),
+        hoverIcon: require('@/assets/ai_lab_icon_5_f.png'),
+        title: '智能城市研究院',
+        brief: Random.csentence(26, 89),
+      },
+      {
+        id: 'lab_6',
+        icon: require('@/assets/ai_lab_icon_6.png'),
+        hoverIcon: require('@/assets/ai_lab_icon_6_f.png'),
+        title: 'AI实验室',
+        brief: Random.csentence(26, 89),
+      },
+      {
+        id: 'lab_7',
+        icon: require('@/assets/ai_lab_icon_7.png'),
+        hoverIcon: require('@/assets/ai_lab_icon_7_f.png'),
+        title: '资管科技创新实验室',
+        brief: Random.csentence(26, 89),
+      },
+      {
+        id: 'lab_8',
+        icon: require('@/assets/ai_lab_icon_8.png'),
+        hoverIcon: require('@/assets/ai_lab_icon_8_f.png'),
+        title: 'AI机器人实验室',
+        brief: Random.csentence(26, 89),
+      },
+    ],
+  });
+
+  const aiData = {
+    title: '产业AI中心',
+    infoTxt: `<p style="margin-bottom: 15px;">产业AI中心集成了京东数科集团旗下AI实验室、数据智能实验室、智能风控实验室、
+    智能城市研究院、数字农牧研究院、资管科技实验室、区块链实验室、AI机器人实验室等多个科技研发机构的AI研发力量，
+    聚集了来自全球各领域的超百位顶尖人工智能技术专家。</p>
+    <p style="margin-bottom: 15px;">致力于将机器学习、深度学习、知识图谱、计算机视觉、
+    语音与自然语言处理等前沿AI技术实现产业级应用，服务于工业、农业、大宗商品流通、金融、
+    资管、零售、商旅出行、生活服务、广告营销、城市公共服务等行业，推动产业数字化浪潮的快速的前进。</p>`,
+    aiCore,
+    aiIndustry,
+    aiLab,
+    aiPaper,
+  };
+  return {
+    code,
+    aiData,
+  };
+};
+Mock.mock(`${domain}/aiCenter`, 'get', aiCenter);
